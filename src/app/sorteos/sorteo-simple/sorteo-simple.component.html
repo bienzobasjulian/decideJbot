@@ -1,0 +1,117 @@
+<div class="fullContainer">
+    <div class="contenedorContenido">
+        <div class="row">
+            <div class="column columnaSorteos">
+                <div class="divIntroSorteo">
+                    <span class="titleSorteoSimple" > Sorteo Simple </span>
+                    <br>
+                    <span class="descripcionSorteoSimple"> Crea un sorteo índicando únicamente los participantes y el número de premios. </span>
+                 </div>
+
+                 <div class="divSorteoSimple"> 
+                <fieldset class="fieldParticipantes">
+                    <legend class="leyendaParticipantes"> Participantes </legend>
+       <div class="content">
+   <p>Introduce un  participante y pulsa intro.</p>
+        
+   <ul><input type="text" spellcheck="false" autocomplete="false" 
+    placeholder="Añade participante" 
+    id="inputParticipantes" [(ngModel)]="newParticipante" (keyup.enter)="addParticipante()">
+    <li *ngFor="let participante of participantes" class="elementoParticipante"> 
+        <span class="textParticipante ">{{participante}}</span>
+        <i class="fa fa-times borrarParticipante"></i>
+        
+    </li>
+</ul>
+ </div>
+       
+      <div class="details">
+   <p><span></span> {{participantes.length}} participantes disponibles</p>
+  <div class="botonesAccionLista">
+                <div class="tooltipCopy">  
+                    <button type=""  class="btnCopy" title="Copiar participantes"><span class="tooltipCopytext" id="myTooltipCopy">Copiar al portapapeles</span><i class="fas fa-copy"></i></button>
+                </div>
+                 <div class="tooltipImport"> 
+                     <button type=""  class="btnImport" title="Importar participantes"><span class="tooltipImporttext" id="myTooltipImport">Importar participantes</span><i class="fas fa-file-upload"></i></button>
+                  </div>
+                 <div class="tooltipExport">
+                     <button type=""  class="btnExport" title="Exportar participantes"><span class="tooltipExporttext" id="myTooltipExport">Exportar participantes</span><i class="fas fa-file-download"></i></button>
+                 </div>
+                 <div class="tooltipDelete">
+                     <button type=""  class="btnDelete" title="Eliminar participantes"><span class="tooltipDeletetext" id="myTooltipDelete">Eliminar participantes</span><i class="fas fa-trash-alt"></i> </button>
+                 </div>
+             </div>
+ </div>
+ 
+       </fieldset>
+            
+             <br>
+        </div>
+        <script type="text/javascript">
+
+        </script>
+
+        <div class="controlesSorteoSimple">
+            <span class="descripcionSorteoSimple"> <br> En caso de no indicar el nº de premios, todos los participantes obtendrán un premio. </span> <br>  <br> 
+                
+                                    <fieldset class="field_numPremios"> 
+                                        <legend class="leyenda_numPremios">Nº de premios</legend>
+                                 <ul>
+                                        <input type="number" min="1" id="input_numPremios" name="input_numPremios">
+                                 </ul>
+                                </fieldset>
+                                <br>
+                                    <button type="submit" name="sorteo" class="btnSortear">
+                                            Sortear 
+                                            <div></div>
+                                            <i class="fas fa-random"></i>
+                                    </button>
+
+         </div>
+        
+     </div>
+
+      <div class="column columnaOtrosSorteos">
+                
+         <div class="box">
+                 <span class="descripcionSorteo"> Si deseas guardar, programar o declarar los premios del sorteo, realiza un <a href='#'> sorteo avanzado. </a> </span>
+         </div>
+         <hr style=" height: 2px; background-color: #4caf50; margin-left: auto; margin-right: auto;"> 
+         <div class="box">
+             <span class="descripcionSorteo"> Si deseas obtener un único ganador prueba a utilizar <a href='#'> la ruleta. </a>  </span>
+         </div>
+         <hr style=" height: 2px; background-color: #4caf50; margin-left: auto; margin-right: auto;"> 
+         <div class="box">
+             <span class="descripcionSorteo"> Si deseas sortear equipos o grupos, utiliza el <a href='#'> generador de grupos. </a>  </span>
+         </div>
+         <hr style=" height: 2px; background-color: #4caf50; margin-left: auto; margin-right: auto;"> 
+         <div class="box">
+             <span class="descripcionSorteo"> Prueba a  <a href='#'> asociar elementos </a> de dos listas. </span>
+         </div>
+         <hr style=" height: 2px; background-color: #4caf50; margin-left: auto; margin-right: auto;"> 
+         <div class="box">
+             <span class="descripcionSorteo"> Prueba a  <a href='#'> obtener ganador del sorteo de una publicación </a>  </span>
+         </div>
+         <hr style=" height: 2px; background-color: #4caf50; margin-left: auto; margin-right: auto;"> 
+         <div class="box">
+             <span class="descripcionSorteo"> Participa en   <a href='#'> sorteos exclusivos  </a> de DecideJbot </span>
+         </div>
+         <hr style=" height: 2px; background-color: #4caf50; margin-left: auto; margin-right: auto;"> 
+         <div class="box">
+             <span class="descripcionSorteo"> Prueba a   <a href='#'> generar números aleatorios </a></span>
+         </div>
+
+
+          
+           
+    </div>
+
+    
+        </div>
+        
+
+        
+            </div>
+            
+    </div>
+

@@ -9,17 +9,17 @@
                  </div>
 
                  <div class="divSorteoSimple"> 
-                <fieldset class="fieldParticipantes">
+                <fieldset class="fieldParticipantes" (click)="setFocusOnNewParticipante()">
                     <legend class="leyendaParticipantes"> Participantes </legend>
        <div class="content">
    <p>Introduce un  participante y pulsa intro.</p>
         
-   <ul><input type="text" spellcheck="false" autocomplete="false" 
+   <ul><input #inputNewParticipante type="text" spellcheck="false" autocomplete="false" 
     placeholder="Añade participante" 
-    id="inputParticipantes" [(ngModel)]="newParticipante" (keyup.enter)="addParticipante()">
-    <li *ngFor="let participante of participantes" class="elementoParticipante"> 
+    id="inputParticipantes" [(ngModel)]="newParticipante"  (keyup.enter)="addParticipante()">
+    <li *ngFor="let participante of participantes; let i = index" class="elementoParticipante"> 
         <span class="textParticipante ">{{participante}}</span>
-        <i class="fa fa-times borrarParticipante"></i>
+        <i class="fa fa-times borrarParticipante" (click)="eliminarParticipante(i)"></i>
         
     </li>
 </ul>
@@ -38,7 +38,7 @@
                      <button type=""  class="btnExport" title="Exportar participantes"><span class="tooltipExporttext" id="myTooltipExport">Exportar participantes</span><i class="fas fa-file-download"></i></button>
                  </div>
                  <div class="tooltipDelete">
-                     <button type=""  class="btnDelete" title="Eliminar participantes"><span class="tooltipDeletetext" id="myTooltipDelete">Eliminar participantes</span><i class="fas fa-trash-alt"></i> </button>
+                     <button type="" (click)="removeAllParticipantes()" class="btnDelete" title="Eliminar participantes"><span class="tooltipDeletetext" id="myTooltipDelete">Eliminar participantes</span><i class="fas fa-trash-alt"></i> </button>
                  </div>
              </div>
  </div>
@@ -54,14 +54,14 @@
         <div class="controlesSorteoSimple">
             <span class="descripcionSorteoSimple"> <br> En caso de no indicar el nº de premios, todos los participantes obtendrán un premio. </span> <br>  <br> 
                 
-                                    <fieldset class="field_numPremios"> 
+                                    <fieldset class="field_numPremios" (click)="setFocusOnNumPremios()"> 
                                         <legend class="leyenda_numPremios">Nº de premios</legend>
                                  <ul>
-                                        <input type="number" min="1" id="input_numPremios" name="input_numPremios">
+                                        <input type="number" min="1" [(ngModel)]="numPremios" id="input_numPremios" name="input_numPremios" #inputNumPremios>
                                  </ul>
                                 </fieldset>
                                 <br>
-                                    <button type="submit" name="sorteo" class="btnSortear">
+                                    <button type="submit" name="sorteo" class="btnSortear" (click)="sortear()">
                                             Sortear 
                                             <div></div>
                                             <i class="fas fa-random"></i>

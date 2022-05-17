@@ -80,7 +80,7 @@ export class SorteoSimpleComponent implements OnInit {
       showCloseButton: true,
       timer: 3000,
       background: 'red',
-      
+      confirmButtonColor: '#4caf50',
       color: 'white',
       iconColor: 'white',
       willClose: () => { this.hayError = false; this.mensajeError = '';}

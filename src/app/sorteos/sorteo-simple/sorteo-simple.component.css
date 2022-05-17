@@ -110,7 +110,7 @@
       border-radius: 0.25rem;
     border: 0.0625rem solid rgba(0,0,0,.3);
     background-color: rgb(255, 255, 255, 0.75);
-    position: relative;
+    /* position: relative; */
     float: left;
     width: 75%;
     margin: auto;

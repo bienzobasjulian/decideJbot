@@ -1,11 +1,8 @@
 * {
-  box-sizing:  border-box;
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
-  
 }
-
-
 
 nav {
   background: #4caf50;
@@ -19,7 +16,8 @@ a {
   text-decoration: none;
 }
 
-.menu, .submenu {
+.menu,
+.submenu {
   list-style-type: none;
 }
 
@@ -32,12 +30,8 @@ a {
   padding: 10px;
 }
 
-.item.button{
+.item.button {
   padding: 9px 5px;
-}
-
-.item:not(.button) a:hover, .item a:hover::after {
-  color: #ccc
 }
 
 /* Mobile menu */
@@ -47,7 +41,6 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .menu li a {
@@ -74,6 +67,34 @@ a {
   text-align: center;
   display: none;
 }
+
+ .menu .item:not(.button):hover{
+  background: #449d48;
+  
+ }
+
+ .menu .item .subitem:hover{
+  background: #3c8c40;
+ 
+ }
+
+ .menu .item .subitem:hover > a{
+  color: white;
+ }
+
+ 
+ 
+
+/* nav ul li:not(.logo, .toggle, .button):hover {
+  background: #336b3e;
+}
+nav ul .item:not(.button) a:hover {
+  background: #336b3e;
+}
+
+ul li.subitem:hover {
+  background: #aaff77;
+} */
 
 .active .item {
   display: block;
@@ -106,13 +127,18 @@ a {
 }
 
 .submenu-active {
-  background-color: #336b3e;
+  background-color: #4caf50;
   border-radius: 3px;
 }
 
+.button.secondary a:hover {
+  background-color: #449d48;
+  border: 1px #3c8c40 solid;
+  transition: 1s;
+}
+
 /* Tablet  */
-@media all and (min-width : 700px){
-  .
+@media all and (min-width: 700px) {
   .menu {
     justify-content: center;
   }
@@ -133,36 +159,25 @@ a {
     order: 2;
   }
 
-  .button a {
-   
-    border: 1px #FFD700 solid;
-  }
-
   .button.secondary {
     border: 0;
   }
 
   .button.secondary a {
     background: transparent;
-    border: 1px #FFD700 solid;
+    border: 1px #ffd700 solid;
+    border-radius: 6px;
   }
+
+  
 
   .button a:hover {
     text-decoration: none;
   }
-
-  .button:not(.secondary) a:hover {
-    background: #336b3e;
-    border-color: white;
-    color: white;
-  }
-
-
-
 }
 
 /* Desktop */
-@media all and (min-width: 960px){
+@media all and (min-width: 960px) {
   .item {
     order: 1;
     position: relative;
@@ -170,7 +185,7 @@ a {
     width: auto;
   }
 
-  .button{
+  .button {
     order: 2;
   }
 
@@ -179,18 +194,18 @@ a {
     position: absolute;
     left: 0;
     top: 68px;
-    background-color: #336b3e;
+    background-color: #4caf50;
   }
 
-  .toggle{
+  .toggle {
     display: none;
   }
 
-  .submenu-active{
+  .submenu-active {
     border-radius: 0;
   }
 
-
+  .listaDecisiones {
+    padding-right: 2.5%;
+  }
 }
-
-

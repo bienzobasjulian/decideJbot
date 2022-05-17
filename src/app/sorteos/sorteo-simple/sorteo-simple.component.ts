@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-sorteo-simple',
@@ -50,6 +51,12 @@ export class SorteoSimpleComponent implements OnInit {
   }
 
   sortear(){
+
+    this.hayError = false;
+    this.mensajeError = '';
+
+    console.log(this.hayError);
+
       if (this.numPremios == 0 || this.numPremios == null) {
         //Si no se indica el nº de premios, se repartirán tantos premios como participantes haya.
         this.numPremios = this.participantes.length;
@@ -59,11 +66,25 @@ export class SorteoSimpleComponent implements OnInit {
      if (this.participantes.length == 0){
        this.hayError = true;
        this.mensajeError = 'Por lo menos debe haber un participante';
-
+       this.showAlert(this.mensajeError);
      
      }
 
+     
+  }
 
+  showAlert(mensajeError : string){
+    Swal.fire({
+      text: mensajeError,
+      icon: 'error',
+      showCloseButton: true,
+      timer: 3000,
+      background: 'red',
+      color: 'white',
+      iconColor: 'white',
+      willClose: () => { this.hayError = false; this.mensajeError = '';}
+     
+    })
   }
 
   //TODO: btnCopy

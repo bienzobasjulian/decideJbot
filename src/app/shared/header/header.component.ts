@@ -12,4 +12,32 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  menuActivado : boolean = false;
+  menuSorteosActivado : boolean = false;
+  menuDecisionesActivado : boolean = false;
+
+  toggleMenu (){
+    this.menuActivado = !this.menuActivado;
+  }
+
+  toggleMenuSorteos(){
+
+    
+    this.menuDecisionesActivado = false;
+
+    this.menuSorteosActivado = !this.menuSorteosActivado;
+  }
+
+  toggleMenuDecisiones(){
+    this.menuSorteosActivado = false;
+
+    this.menuDecisionesActivado = !this.menuDecisionesActivado;
+  }
+
+
+
+  
+
+    
+
 }

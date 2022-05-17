@@ -1,84 +1,196 @@
-
-/* Header */
-.headerPrincipal
-{
+* {
+  box-sizing:  border-box;
   padding: 0;
-    margin: 0 auto;
-    background: #4caf50;
-    width: 100%;
-    height: 70px;
+  margin: 0;
+  
+}
+
+
+
+nav {
+  background: #4caf50;
+  padding: 0 15px;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu, .submenu {
+  list-style-type: none;
+}
+
+.logo {
+  font-size: 20px;
+  padding: 7.5px 10px 7.5px 0;
+}
+
+.item {
+  padding: 10px;
+}
+
+.item.button{
+  padding: 9px 5px;
+}
+
+.item:not(.button) a:hover, .item a:hover::after {
+  color: #ccc
+}
+
+/* Mobile menu */
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.menu li a {
+  display: block;
+  padding: 15px 5px;
+}
+
+.menu li.subitem a {
+  padding: 15px;
+}
+
+.toggle {
+  order: 1;
+  font-size: 20px;
+}
+
+.item.button {
+  order: 2;
+}
+
+.item {
+  order: 3;
+  width: 100%;
+  text-align: center;
+  display: none;
+}
+
+.active .item {
+  display: block;
+}
+
+.button.secondary {
+  border-bottom: 1px #444 solid;
+}
+
+.submenu {
+  display: none;
+}
+
+.submenu-active .submenu {
+  display: block;
+}
+
+.has-submenu > a::after {
+  font-family: "Font Awesome 5 Free";
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 900;
+  content: "\f078";
+  color: white;
+  padding-left: 5px;
+}
+
+.subitem a {
+  padding: 10px 15px;
+}
+
+.submenu-active {
+  background-color: #336b3e;
+  border-radius: 3px;
+}
+
+/* Tablet  */
+@media all and (min-width : 700px){
+  .
+  .menu {
     justify-content: center;
-    display: flex;
+  }
+
+  .logo {
+    flex: 1;
+  }
+
+  .item.button {
+    width: auto;
+    order: 1;
+    display: block;
+  }
+
+  .toggle {
+    flex: 1;
+    text-align: right;
+    order: 2;
+  }
+
+  .button a {
+   
+    border: 1px #FFD700 solid;
+  }
+
+  .button.secondary {
+    border: 0;
+  }
+
+  .button.secondary a {
+    background: transparent;
+    border: 1px #FFD700 solid;
+  }
+
+  .button a:hover {
+    text-decoration: none;
+  }
+
+  .button:not(.secondary) a:hover {
+    background: #336b3e;
+    border-color: white;
+    color: white;
+  }
+
+
+
 }
 
-.TituloApp
-{
-	color: white;
-	display: block;
-	margin: auto;
-	text-align: center;
-  width: 350px;
-
-     
-}
-
-.spanSesion
-{
-      color: white;
-    margin-right: 10px;
-    margin-top: auto;
-    margin-bottom: auto;
-
-}
-
-.login{
-  display:none;
-  margin-bottom: 2%;
-  margin-top: 42px;
-  position: absolute;
-  right: 0;
-  width: 260px;
-}
-
-.triangle{
-  border-right: 12px solid transparent;
-  border-bottom: 12px solid #338fe0;
-  border-left: 12px solid transparent;
-  margin-left: 200px;
-  width: 0;
-}
-
-.login form{
- background: #272727;
-    border-top: 6px solid #338fe0;
-    color: #fff;
-    padding: 16px 12px;
+/* Desktop */
+@media all and (min-width: 960px){
+  .item {
+    order: 1;
     position: relative;
-    z-index: 100;
+    display: block;
+    width: auto;
+  }
+
+  .button{
+    order: 2;
+  }
+
+  .submenu-active .submenu {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 68px;
+    background-color: #336b3e;
+  }
+
+  .toggle{
+    display: none;
+  }
+
+  .submenu-active{
+    border-radius: 0;
+  }
+
+
 }
 
-input[type="email"],input[type="password"]{
-  background: #fff;
-  border: none;
-  box-sizing: border-box;
-  color: #555;
-  margin-bottom: 12px;
-  padding: 8px;
-  width: 100%;
-}
-
-input[type="submit"]{
-  background: #338fe0;
-  border: 0;
-  color: #fff;
-  cursor: pointer;
-  font-weight: 600;
-  padding: 10px 0;
-  text-transform: uppercase;
-  width: 100%;
-}
-
-input[type="submit"]:hover{
-  background: #2288bb;
-}
 

@@ -1,6 +1,25 @@
-<header  class="headerPrincipal">
-    <a routerLink=""> 
-        <img class="TituloApp"  src="../../../assets/img/DecideJbot_texto.png">
-    </a>
-   
-</header>
+<nav>
+    <ul class="menu" [ngClass]="{'active' : menuActivado}"> 
+        <li class="logo"><a href="">DecideJbot</a></li>
+        <li class="item has-submenu" (click)="toggleMenuSorteos()" [ngClass]="{'submenu-active' :menuSorteosActivado}"> 
+            <a tabindex="0">Sorteos</a>
+            <ul class="submenu">
+                <li class="subitem"><a href="">Sorteo Simple</a></li>
+                <li class="subitem"><a href="">Números aleatorios</a></li>
+            </ul>
+        </li>
+
+        <li class="item has-submenu" [ngClass]="{'submenu-active' :menuDecisionesActivado}" (click)="toggleMenuDecisiones()" >
+            <a tabindex="0">Decisiones </a>
+            <ul class="submenu">
+                <li class="subitem"><a href="">Próximamente...</a></li>
+            </ul>
+        </li>
+        <li class="item button"><a href="">Iniciar sesión</a></li>
+        <li class="item button secondary"><a href="">Registrarse</a></li>
+        <li class="toggle" *ngIf="!menuActivado" (click)="toggleMenu()"><a href="#"><i  class="fa fa-bars"></i></a></li>
+        <li class="toggle" *ngIf="menuActivado" (click)="toggleMenu()"><a href="#"><i  class="fa fa-times"></i></a></li>
+    </ul>
+
+    
+</nav>

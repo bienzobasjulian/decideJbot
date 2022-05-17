@@ -70,7 +70,7 @@ export class SorteoSimpleComponent implements OnInit {
      
      }
 
-     
+
   }
 
   showAlert(mensajeError : string){
@@ -80,6 +80,7 @@ export class SorteoSimpleComponent implements OnInit {
       showCloseButton: true,
       timer: 3000,
       background: 'red',
+      
       color: 'white',
       iconColor: 'white',
       willClose: () => { this.hayError = false; this.mensajeError = '';}

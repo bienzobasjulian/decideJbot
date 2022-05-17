@@ -16,14 +16,17 @@
        <div class="content">
    <p>Introduce un  participante y pulsa intro.</p>
         
-   <ul><input #inputNewParticipante type="text" spellcheck="false" autocomplete="false" 
-    placeholder="Añade participante" 
-    id="inputParticipantes" [(ngModel)]="newParticipante"  (keyup.enter)="addParticipante()">
+   <ul>
+
     <li *ngFor="let participante of participantes; let i = index" class="elementoParticipante"> 
         <span class="textParticipante ">{{participante}}</span>
         <i class="fa fa-times borrarParticipante" (click)="eliminarParticipante(i)"></i>
         
     </li>
+
+    <input #inputNewParticipante type="text" spellcheck="false" autocomplete="false" 
+    placeholder="Añade participante" 
+    id="inputParticipantes" [(ngModel)]="newParticipante"  (keyup.enter)="addParticipante()">
 </ul>
  </div>
        

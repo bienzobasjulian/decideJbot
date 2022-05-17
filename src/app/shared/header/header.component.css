@@ -137,6 +137,11 @@ ul li.subitem:hover {
   transition: 1s;
 }
 
+.button:not(.secondary) a:hover{
+  background-color: #449d48;
+  transition: 0.3s;
+}
+
 /* Tablet  */
 @media all and (min-width: 700px) {
   .menu {

@@ -1,4 +1,6 @@
 <div class="fullContainer">
+    
+    <app-alert *ngIf="hayError" [hayError]="hayError" [mensajeError]="mensajeError"></app-alert>
     <div class="contenedorContenido">
         <div class="row">
             <div class="column columnaSorteos">

@@ -59,6 +59,8 @@ export class SorteoSimpleComponent implements OnInit {
      if (this.participantes.length == 0){
        this.hayError = true;
        this.mensajeError = 'Por lo menos debe haber un participante';
+
+     
      }
 
 

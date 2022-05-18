@@ -16,13 +16,15 @@ export class SorteoSimpleComponent implements OnInit {
 
   participantes: string[] = [];
   newParticipante: string = '';
-  numPremios: number | null = null  ;
+  numPremios: number = 0  ;
   hayError : boolean = false;
   mensajeError : string = '';
   ganadores : string[] = [];
-  generarResultados : boolean = false;
+  showDivResultados : boolean = false;
   hayResultados : boolean = false;
   mostrarCarga : boolean = false;
+  tiempoCarga : number = 5;
+  fechaSorteo : Date = new Date();
 
   addParticipante() {
     let valorParticipante = this.newParticipante;
@@ -58,6 +60,11 @@ export class SorteoSimpleComponent implements OnInit {
 
     this.hayError = false;
     this.mensajeError = '';
+    this.tiempoCarga = 5;
+    this.hayResultados = false;
+    this.showDivResultados = false;
+    this.mostrarCarga  = false;
+    this.ganadores = [];
 
     console.log(this.hayError);
 
@@ -79,13 +86,60 @@ export class SorteoSimpleComponent implements OnInit {
      }
      else {
        //Si está todo OK... 
-       this.generarResultados = true; //Para mostrar el div.row de los resultados
+       this.showDivResultados = true; //Para mostrar el div.row de los resultados
        this.mostrarCarga = true; //Para mostrar la carga de los resultados
 
+       this.cuentaAtras();
        
+
      }
 
 
+  }
+
+  cuentaAtras(){
+    setTimeout(()=> {
+      this.tiempoCarga--;
+      this.procesoCuentaAtras();
+    }, 1000);
+  }
+
+  procesoCuentaAtras(){
+
+    if( this.tiempoCarga == 0){
+      this.generarResultados();
+
+    }else{
+      this.cuentaAtras();
+    }
+  }
+
+  generarResultados(){
+        this.mostrarCarga = false;
+        
+
+       
+        var i = 0;
+        for (i; i < this.numPremios; i++){
+
+          var rand = Math.floor(Math.random()*this.participantes.length);
+          var ganador = this.participantes[rand];
+
+          if (this.ganadores.includes(ganador)) //Si el ganador está en la lista...
+          {
+           i--;
+          }
+          else
+          {
+            this.ganadores[i] = ganador;
+          }
+
+
+          
+        }
+        
+        this.hayResultados = true;
+        this.fechaSorteo = new Date();
   }
 
   showAlert(mensajeError : string){

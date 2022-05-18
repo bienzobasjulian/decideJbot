@@ -114,12 +114,36 @@
     
         </div>
         
-        <div class="row" *ngIf="generarResultados">
+        <div class="row" *ngIf="showDivResultados">
             <div class="contenedorResultados">
                 <hr> 
                 <div class="contenedorTextoCarga" *ngIf="mostrarCarga">
                     <span id="textoCarga"> Generando resultados... </span>
                 </div>
+                
+                <span class="titleResultados" *ngIf="hayResultados">Resultados del sorteo</span>
+                <div class="containerGanadores" *ngIf="hayResultados">
+                    <div class="titleGanadores">Ganadores:</div>
+                    <div class="divListaGanadores">
+                        <ol class="listaGanadores">
+                            <li *ngFor="let ganador of ganadores">{{ganador}}</li>
+                        </ol>
+                    </div>
+
+                    <div class="infoResultados">
+                        <div class="fecha"><span>{{fechaSorteo | date:'dd/MM/yyyy HH:mm:ss'}}</span></div>
+                       <div class="resultados_titleApp">
+                          <span>DecideJbot</span>
+                       </div>
+                    </div>
+                </div>
+
+                <p>
+                    <div class="containerContador" *ngIf="mostrarCarga">
+                        <span id="textoContador">{{tiempoCarga}}</span>
+                    </div>
+                
+                    <button type="submit" name="sorteo" class="btnRepetir" *ngIf="hayResultados" (click)="sortear()">Repetir sorteo <div></div><i class="fas fa-random"></i></button>
             </div>
         </div>
 

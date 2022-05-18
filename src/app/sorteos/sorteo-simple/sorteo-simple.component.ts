@@ -191,13 +191,17 @@ export class SorteoSimpleComponent implements OnInit {
       participantes : this.participantes
     }
     var sorteos : Sorteo[] = [];
-    sorteos.push(sorteo);
+    
 
     if (localStorage.getItem('sorteos') == null){
       localStorage.setItem('sorteos', '[]');
     }
 
-    var old_sorteos = JSON.parse(localStorage.getItem('sorteos'));
+    sorteos = JSON.parse(localStorage.getItem('sorteos') || "") ;
+    sorteos.push(sorteo);
+
+    localStorage.setItem('sorteos', JSON.stringify(sorteos) )
+   
 
   
 

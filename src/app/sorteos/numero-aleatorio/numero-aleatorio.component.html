@@ -10,7 +10,7 @@
                
                  <div class="formNumerosAleatorios">
 
-                   <div class="form-row">
+                   <div class="form-row" (click)="setFocusInMin()">
                        <div class="form-column form-column-left">
                            <label>Número mínimo</label>
                        </div>
@@ -22,7 +22,7 @@
                    <hr>
 
 
-                   <div class="form-row">
+                   <div class="form-row" (click)="setFocusInMax()">
                        <div class="form-column form-column-left">
                            <label>Número máximo</label>
                        </div>
@@ -33,7 +33,7 @@
 
                    <hr>
 
-                   <div class="form-row">
+                   <div class="form-row" (click)="setFocusInNumerosAGenerar()">
                        <div class="form-column form-column-left">
                            <label>Números a generar</label>
                        </div>
@@ -44,7 +44,7 @@
 
                    <hr>
 
-                   <div class="form-row">
+                   <div class="form-row" (click)="changePermitirRepetidosValue()">
                        <div class="form-column form-column-left">
                            <label>¿Permitir repetidos?</label>
                        </div>

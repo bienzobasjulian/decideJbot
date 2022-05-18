@@ -32,7 +32,7 @@
        
       <div class="details">
    <p><span></span> {{participantes.length}} participantes disponibles</p>
-  <div class="botonesAccionLista">
+  <div class="botonesAccionLista" >
                 <div class="tooltipCopy">  
                     <button type=""  class="btnCopy" title="Copiar participantes"><span class="tooltipCopytext" id="myTooltipCopy">Copiar al portapapeles</span><i class="fas fa-copy"></i></button>
                 </div>
@@ -40,10 +40,13 @@
                      <button type=""  class="btnImport" title="Importar participantes"><span class="tooltipImporttext" id="myTooltipImport">Importar participantes</span><i class="fas fa-upload"></i></button>
                   </div>
                  <div class="tooltipExport">
-                     <button type=""  class="btnExport" title="Guardar participantes" (click)="showSaveModal()"><span class="tooltipExporttext" id="myTooltipExport">Guardar participantes</span><i class="fas fa-download"></i></button>
+                     <button type=""   class="btnExport" title="Guardar participantes" (click)="showSaveModal()"><span class="tooltipExporttext" id="myTooltipExport">Guardar participantes</span><i class="fas fa-download"></i></button>
                  </div>
+                 <div class="tooltipMezclar">
+                    <button type=""   class="btnMezclar" title="Mezclar participantes"><span class="tooltipMezclartext" id="myTooltipMezclar">Mezclar participantes</span><i class="fas fa-random"></i></button>
+                </div>
                  <div class="tooltipDelete">
-                     <button type="" (click)="removeAllParticipantes()" class="btnDelete" title="Eliminar participantes"><span class="tooltipDeletetext" id="myTooltipDelete">Eliminar participantes</span><i class="fas fa-trash-alt"></i> </button>
+                     <button type=""  (click)="removeAllParticipantes()" class="btnDelete" title="Eliminar participantes"><span class="tooltipDeletetext" id="myTooltipDelete">Eliminar participantes</span><i class="fas fa-trash-alt"></i> </button>
                  </div>
              </div>
  </div>
@@ -59,11 +62,11 @@
         <div class="controlesSorteoSimple">
             <span class="descripcionSorteoSimple"> <br> En caso de no indicar el nº de premios, todos los participantes obtendrán un premio. </span> <br>  <br> 
                 
-                                    <fieldset class="field_numPremios" (click)="setFocusOnNumPremios()"> 
+                                    <fieldset class="field_numPremios " (click)="setFocusOnNumPremios()"> 
                                         <legend class="leyenda_numPremios">Nº de premios</legend>
-                                 <ul>
-                                        <input type="number" min="1" [(ngModel)]="numPremios" id="input_numPremios" name="input_numPremios" #inputNumPremios>
-                                 </ul>
+                                 
+                                        <input type="number" class="form-control" min="1" [(ngModel)]="numPremios" id="input_numPremios" name="input_numPremios" #inputNumPremios>
+                               
                                 </fieldset>
                                 <br>
                                     <button type="submit" name="sorteo" class="btnSortear" (click)="sortear()">

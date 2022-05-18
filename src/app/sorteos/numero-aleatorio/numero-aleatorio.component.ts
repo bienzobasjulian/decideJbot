@@ -29,6 +29,23 @@ export class NumeroAleatorioComponent implements OnInit {
   numeros : number[]  = [];
 
 
+
+  setFocusInMin(){
+    this.inputValorMinimo.nativeElement.focus();
+  }
+
+  setFocusInMax(){
+    this.inputValorMaximo.nativeElement.focus();
+  }
+
+  setFocusInNumerosAGenerar(){
+    this.inputValorGenerar.nativeElement.focus();
+  }
+
+  changePermitirRepetidosValue(){
+    this.permitirRepetidos = !this.permitirRepetidos;
+  }
+
   verifyForm() : boolean {
 
     var formIsValid = false;

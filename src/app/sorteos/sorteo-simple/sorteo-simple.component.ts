@@ -59,6 +59,10 @@ export class SorteoSimpleComponent implements OnInit {
     this.participantes = [] ;
   }
 
+  mezclarParticipantes(){
+    this.participantes = this.participantes.sort();
+  }
+
   sortear(){
 
     this.hayError = false;

@@ -82,6 +82,15 @@ a {
   color: white;
  }
 
+ .selected {
+  
+  background-color:  #7c7f7c;
+ }
+
+ .selected:hover {
+  background: #3c8c40;
+ }
+
  
  
 

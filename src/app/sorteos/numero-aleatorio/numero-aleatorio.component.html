@@ -1,0 +1,112 @@
+<div class="fullContainer">
+    <div class="contenedorContenido">
+        <div class="row">
+            <div class="column columnaSorteos">
+                <div class="divIntroSorteo">
+                    <span class="titleSorteoSimple" > Generar números aleatorios </span>
+                    <br>
+                    <span class="descripcionSorteoSimple"> Genera números aleatorios indicando un número mínimo y un número máximo. </span>
+                 </div>
+               
+                 <div class="formNumerosAleatorios">
+
+                   <div class="form-row">
+                       <div class="form-column form-column-left">
+                           <label>Número mínimo</label>
+                       </div>
+                       <div class="form-column form-column-right">
+                       <input type="number" min="1" class="form-control" id="inputValorMinimo" [(ngModel)]="valorMinimo" #inputValorMinimo>
+                       </div>
+                   </div>
+
+                   <hr>
+
+
+                   <div class="form-row">
+                       <div class="form-column form-column-left">
+                           <label>Número máximo</label>
+                       </div>
+                       <div class="form-column form-column-right">
+                       <input type="number" min="1" class="form-control" id="inputValorMaximo" [(ngModel)]="valorMaximo" #inputValorMaximo>
+                       </div>
+                   </div>
+
+                   <hr>
+
+                   <div class="form-row">
+                       <div class="form-column form-column-left">
+                           <label>Números a generar</label>
+                       </div>
+                       <div class="form-column form-column-right">
+                       <input type="number" min="1" class="form-control" id="inputValorGenerar" [(ngModel)]="numerosAGenerar"  #inputValorGenerar>
+                       </div>
+                   </div>
+
+                   <hr>
+
+                   <div class="form-row">
+                       <div class="form-column form-column-left">
+                           <label>¿Permitir repetidos?</label>
+                       </div>
+                       <div class="form-column form-column-right">
+                       <input type="checkbox" class="form-control-checkbox" id="inputValorRepetidos" [(ngModel)]="permitirRepetidos" #inputPermitirRepetidos>
+                       </div>
+                   </div>
+                   
+                   <div class="controlesNumerosAleatorios">
+                   
+                       <button type="submit" name="sorteo" class="btnSortear" (click)="generarNumeros()">
+                                           Generar 
+                                           <div></div>
+                                           <i class="fas fa-random"></i>
+                                   </button>
+
+                   </div>
+                   
+
+                 </div>
+
+                 
+                 
+
+                 
+
+
+        
+        
+     </div>
+
+      <div class="column columnaOtrosSorteos">
+                
+         <div class="box">
+                 <span class="descripcionSorteo"> Si deseas obtener ganadores a partir de una lista de participantes, prueba el <a routerLink="sorteos/SorteoSimple"> sorteo simple. </a> </span>
+         </div>
+         <hr style=" height: 2px; background-color: #4caf50; margin-left: auto; margin-right: auto;"> 
+         <div class="box">
+             <span class="descripcionSorteo"> Si deseas obtener un único ganador prueba a utilizar <a href='#'> la ruleta. </a>  </span>
+         </div>
+         <hr style=" height: 2px; background-color: #4caf50; margin-left: auto; margin-right: auto;"> 
+         <div class="box">
+             <span class="descripcionSorteo"> Si deseas sortear equipos o grupos, utiliza el <a href='#'> generador de grupos. </a>  </span>
+         </div>
+         <hr style=" height: 2px; background-color: #4caf50; margin-left: auto; margin-right: auto;"> 
+         <div class="box">
+             <span class="descripcionSorteo"> Prueba a  <a href='#'> asociar elementos </a> de dos listas. </span>
+         </div>
+         <hr style=" height: 2px; background-color: #4caf50; margin-left: auto; margin-right: auto;"> 
+         
+         
+
+
+          
+           
+    </div>
+
+    
+        </div>
+        
+
+        
+            </div>
+            
+    </div>

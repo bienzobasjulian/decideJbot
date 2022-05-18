@@ -695,3 +695,8 @@ text-transform: none;
    max-height: 200px;
   overflow-y:auto;
 }
+
+.descripcionSorteo a {
+  text-decoration: none;
+  color: #4caf50;
+}

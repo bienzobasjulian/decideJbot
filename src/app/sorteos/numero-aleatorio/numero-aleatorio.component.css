@@ -1,0 +1,231 @@
+.fullContainer
+{
+   display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    padding: 0;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+    -webkit-flex: 1 1;
+    -moz-box-flex: 1;
+    flex: 1 1;
+    background-color: #fbfdeb;
+     height: 100%;  
+}
+
+.contenedorContenido
+{
+        display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    flex-direction: column;
+    -webkit-flex-grow: 1;
+    -moz-box-flex: 1;
+    flex-grow: 1;
+    padding-top: 2.25rem;
+     background-color: #fbfdeb;
+     height: 100%;
+}
+
+.column 
+{
+  float: left;
+  padding: 10px;
+  
+}
+
+.row
+{
+   background-color: #fbfdeb;
+     height: 100%;
+}
+
+.row:after 
+{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.columnaSorteos
+{
+    width: 75%;
+}
+
+
+
+.divIntroSorteo
+{
+  margin: auto;
+  text-align: center;
+}
+
+.titleSorteoSimple
+{
+     margin: 0;
+    font-family: "Fredoka One",-apple-system,BlinkMacSystemFont,"Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica","Arial",sans-serif;
+    font-weight: 900;
+    font-size: 2.125rem;
+    color: #4caf50;
+    text-align: center;
+    
+}
+
+.descripcionSorteoSimple
+{
+      margin: 0px;
+    font-family: Montserrat, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.75;
+    color: rgba(0, 0, 0);
+    text-align: center;
+}
+
+.columnaOtrosSorteos
+{
+    width: 25%;
+    padding-right: 1.125rem;
+    padding-left: 1.125rem;
+}
+
+.descripcionSorteo a
+{
+  font-weight: bold;
+}
+
+.formNumerosAleatorios
+{
+  width: 50%;
+  margin: auto;
+  margin-top: 2.5%;
+  
+}
+
+.form-row
+{
+  display: flex;
+  align-items: center;
+}
+
+.form-row:after
+{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.form-column
+{
+  float: left;
+}
+
+.form-column-left
+{
+  width: 75%;
+}
+
+.form-column-right
+{
+  width: 25%;
+}
+
+.form-control
+{
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  max-width: 80px;
+  margin-top: 8px;
+  min-width: 56px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding: 0;
+  height: 40px;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
+  background-color: #fff;
+  border-color: #d2d6dc;
+  border-width: 1px;
+  border-radius: 10px;
+  border-radius: 4px;
+  padding: .5rem .75rem;
+  border-color: #e9e9e9;
+  box-shadow: none;
+  color: #4caf50;
+}
+
+.form-control-checkbox
+{
+ 
+  max-width: 80px;
+  margin-top: 8px;
+  min-width: 80px;
+  height: 40px;
+  box-shadow: none;
+}
+
+
+
+.controlesNumerosAleatorios
+{
+  text-align: center;
+  margin-top: 7%;
+}
+
+.btnSortear , .btnRepetir
+{
+  backface-visibility: hidden;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+  background: linear-gradient(180deg,#ce8 0%,#592 100%);
+  border-radius: 100px;
+  border: 0.5px solid #8c4;
+  border-width: 0.5px 0.5px 0.5px 0.5px;
+  padding: 7px 40px 9px 15px;
+  box-shadow: inset 0px 1px 0px rgba(255,255,255,0.6),0px 1px 2px rgba(0,0,0,0.5);
+    color: #ffffff;
+  font-size: 16px;
+  font-family: consolas;
+  font-weight: 900;
+  font-style: normal;
+  text-shadow: 0px 1px 0px rgba(255,255,255,0.5)
+}
+
+.btnSortear > button , .btnRepetir >  button
+{
+   color: #372;
+  font-size: 10px;
+  font-family: transcript;
+  font-weight: 200;
+  font-style: italic;
+  text-align: center;
+  margin: -3px 0px 0px 0px
+}
+
+.btnSortear > i , .btnRepetir > i 
+{
+  color: #372;
+  font-size: 1.1em;
+  background: #fff;
+  border-radius: 100px;
+  border: 3px solid #371;
+  border-width: 3px 3px 3px 3px;
+  padding: 7px 7px 7px 7px;
+  margin: 0px 0px 0px 0px;
+  position: absolute;
+  top: 0px;
+  right: 0px
+}
+
+.descripcionSorteo a {
+  text-decoration: none;
+  color: #4caf50;
+}

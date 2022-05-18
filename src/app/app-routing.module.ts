@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { IndexComponent } from './home/index/index.component';
+import { NumeroAleatorioComponent } from './sorteos/numero-aleatorio/numero-aleatorio.component';
 import { SorteoSimpleComponent } from './sorteos/sorteo-simple/sorteo-simple.component';
 
 const routes: Routes = [
@@ -12,6 +13,11 @@ const routes: Routes = [
   {
     path: 'sorteos/SorteoSimple',
     component: SorteoSimpleComponent,
+    
+  },
+  {
+    path: 'sorteos/NumerosAleatorios',
+    component: NumeroAleatorioComponent,
     
   },
   {

@@ -114,6 +114,14 @@
     
         </div>
         
+        <div class="row" *ngIf="generarResultados">
+            <div class="contenedorResultados">
+                <hr> 
+                <div class="contenedorTextoCarga" *ngIf="mostrarCarga">
+                    <span id="textoCarga"> Generando resultados... </span>
+                </div>
+            </div>
+        </div>
 
         
             </div>

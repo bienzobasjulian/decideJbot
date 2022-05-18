@@ -605,6 +605,13 @@ body
   
 }
 
+.contenedorResultados hr {
+  height: 2px;
+   background-color: #4caf50;
+    margin-left: auto; 
+    margin-right: auto;
+}
+
 .containerGanadores
 {
     background-color: #fff;

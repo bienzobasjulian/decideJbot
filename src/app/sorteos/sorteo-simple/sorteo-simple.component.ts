@@ -19,6 +19,10 @@ export class SorteoSimpleComponent implements OnInit {
   numPremios: number | null = null  ;
   hayError : boolean = false;
   mensajeError : string = '';
+  ganadores : string[] = [];
+  generarResultados : boolean = false;
+  hayResultados : boolean = false;
+  mostrarCarga : boolean = false;
 
   addParticipante() {
     let valorParticipante = this.newParticipante;
@@ -67,7 +71,18 @@ export class SorteoSimpleComponent implements OnInit {
        this.hayError = true;
        this.mensajeError = 'Por lo menos debe haber un participante';
        this.showAlert(this.mensajeError);
-     
+     }
+     else if (this.numPremios > this.participantes.length){ //Si hay más premios que participantes... 
+      this.hayError = true;
+      this.mensajeError = 'No puede haber más premios que participantes';
+      this.showAlert(this.mensajeError);
+     }
+     else {
+       //Si está todo OK... 
+       this.generarResultados = true; //Para mostrar el div.row de los resultados
+       this.mostrarCarga = true; //Para mostrar la carga de los resultados
+
+       
      }
 
 

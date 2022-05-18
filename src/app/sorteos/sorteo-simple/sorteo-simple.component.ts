@@ -1,5 +1,8 @@
+import { JsonPipe } from '@angular/common';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { reduce } from 'rxjs';
 import Swal from 'sweetalert2';
+import { Sorteo } from '../interfaces/sorteo.interface';
 
 @Component({
   selector: 'app-sorteo-simple',
@@ -16,7 +19,7 @@ export class SorteoSimpleComponent implements OnInit {
 
   participantes: string[] = [];
   newParticipante: string = '';
-  numPremios: number = 0  ;
+  numPremios!: number   ;
   hayError : boolean = false;
   mensajeError : string = '';
   ganadores : string[] = [];
@@ -142,7 +145,8 @@ export class SorteoSimpleComponent implements OnInit {
         this.fechaSorteo = new Date();
   }
 
-  showAlert(mensajeError : string){
+  showAlert(mensajeError : string)
+  {
     Swal.fire({
       text: mensajeError,
       icon: 'error',
@@ -152,10 +156,63 @@ export class SorteoSimpleComponent implements OnInit {
       confirmButtonColor: '#4caf50',
       color: 'white',
       iconColor: 'white',
+      timerProgressBar: true,
       willClose: () => { this.hayError = false; this.mensajeError = '';}
      
     })
   }
+
+  showSaveModal(){
+
+    
+    Swal.fire({
+      title: 'Guarda tu sorteo',
+      text: 'El almacenamiento local se guarda en el navegador y no es necesario el inicio de sesión.',
+      showDenyButton: true,
+      showCancelButton: true,
+      cancelButtonColor: 'red',
+      denyButtonColor: 'purple',
+      showCloseButton: true,
+      confirmButtonColor: 'green',
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: '<i class="fa fa-home" aria-hidden="true"></i> Localmente',
+      denyButtonText: `<i class="fa fa-cloud-download" aria-hidden="true"></i> Externamente`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+      this.saveSorteoLocalmente();
+      } else if (result.isDenied) {
+        alert("Guardar extermamente;");
+      }
+    })
+  }
+
+  saveSorteoLocalmente(){
+    let sorteo : Sorteo = {
+      participantes : this.participantes
+    }
+    var sorteos : Sorteo[] = [];
+    sorteos.push(sorteo);
+
+    if (localStorage.getItem('sorteos') == null){
+      localStorage.setItem('sorteos', '[]');
+    }
+
+    var old_sorteos = JSON.parse(localStorage.getItem('sorteos'));
+
+  
+
+    
+  
+    
+
+    
+
+
+  }
+
+  
+
+  
 
   //TODO: btnCopy
 

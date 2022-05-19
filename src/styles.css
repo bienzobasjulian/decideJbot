@@ -3,6 +3,11 @@ body
   padding: 0;
   margin: 0 auto;
 }
+
+html, body {
+  height: 100%;
+}
+
 *
 {
   box-sizing: border-box;
@@ -21,5 +26,37 @@ body
   clear: both;
 }
 
+.fullContainer
+{
+	 display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    padding: 0;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+    -webkit-flex: 1 1;
+    -moz-box-flex: 1;
+    flex: 1 1;
+    background-color: #fbfdeb;
+    /* height: 100%; */
+}
+
+.contenedorContenido
+{
+	    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    flex-direction: column;
+    -webkit-flex-grow: 1;
+    -moz-box-flex: 1;
+    flex-grow: 1;
+    padding-top: 2.25rem;
+}
 
 

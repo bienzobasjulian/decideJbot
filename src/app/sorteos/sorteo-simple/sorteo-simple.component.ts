@@ -3,6 +3,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { reduce } from 'rxjs';
 import Swal from 'sweetalert2';
 import { Sorteo } from '../interfaces/sorteo.interface';
+import { SorteosService } from '../sorteos.service';
 
 @Component({
   selector: 'app-sorteo-simple',
@@ -13,7 +14,8 @@ export class SorteoSimpleComponent implements OnInit {
 
   @ViewChild('inputNewParticipante') inputNewParticipante!: ElementRef; 
   @ViewChild('inputNumPremios') inputNumPremios!: ElementRef;
-  constructor() {}
+
+  constructor(private sorteosService : SorteosService) {}
 
   ngOnInit(): void {}
 
@@ -28,9 +30,13 @@ export class SorteoSimpleComponent implements OnInit {
   mostrarCarga : boolean = false;
   tiempoCarga : number = 5;
   fechaSorteo : Date = new Date();
+  sorteosLocales : Sorteo[] = [];
+
+
 
   stateSaveButtons : boolean = false;
   stateMainButtons : boolean = true;
+  mostrarTablaSorteosLocales : boolean = false;
 
   showSaveButtons(){
 
@@ -207,23 +213,23 @@ export class SorteoSimpleComponent implements OnInit {
     }
     else{
       sorteos.push(sorteo);
+      this.sorteosLocales = sorteos;
 
       localStorage.setItem('sorteos', JSON.stringify(sorteos) );
       alert("Sorteo guardado localmemte");
     }
-    
-   
-
-  
-
-    
-  
-    
-
-    
-
 
   }
+
+  getSorteosLocales(){
+   this.sorteosLocales =  this.sorteosService.getSorteosOfLocal();
+   if (this.sorteosLocales.length > 0 ){ 
+    this.mostrarTablaSorteosLocales = true}
+   
+   
+  }
+
+  
 
   showSaveInfoModal(){
     Swal.fire({

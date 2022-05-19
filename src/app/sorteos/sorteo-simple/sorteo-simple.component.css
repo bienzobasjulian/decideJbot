@@ -1,145 +1,168 @@
-.fullContainer
-{
-   display: -webkit-flex;
-    display: -moz-box;
-    display: flex;
-    padding: 0;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-justify-content: space-between;
-    -moz-box-pack: justify;
-    justify-content: space-between;
-    -webkit-flex: 1 1;
-    -moz-box-flex: 1;
-    flex: 1 1;
-    background-color: #fbfdeb;
-     height: 100%;  
+.fullContainer {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  padding: 0;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  justify-content: space-between;
+  -webkit-flex: 1 1;
+  -moz-box-flex: 1;
+  flex: 1 1;
+  background-color: #fbfdeb;
+  height: 100%;
 }
 
-.contenedorContenido
-{
-        display: -webkit-flex;
-    display: -moz-box;
-    display: flex;
-    -webkit-flex-direction: column;
-    -moz-box-orient: vertical;
-    -moz-box-direction: normal;
-    flex-direction: column;
-    -webkit-flex-grow: 1;
-    -moz-box-flex: 1;
-    flex-grow: 1;
-    padding-top: 2.25rem;
-     background-color: #fbfdeb;
-     height: 100%;
+.contenedorContenido {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  flex-direction: column;
+  -webkit-flex-grow: 1;
+  -moz-box-flex: 1;
+  flex-grow: 1;
+  padding-top: 2.25rem;
+  background-color: #fbfdeb;
+  height: 100%;
 }
 
-.column 
-{
+.column {
   float: left;
   padding: 10px;
-  
 }
 
-.row
-{
-   background-color: #fbfdeb;
-     height: 100%;
+.row {
+  background-color: #fbfdeb;
+  height: 100%;
 }
 
-.row:after 
-{
+.row:after {
   content: "";
   display: table;
   clear: both;
 }
 
-.columnaSorteos
-{
-    width: 75%;
+.columnaSorteos {
+  width: 75%;
 }
 
-
-
-.divIntroSorteo
-{
+.divIntroSorteo {
   margin: auto;
   text-align: center;
 }
 
-.titleSorteoSimple
-{
-     margin: 0;
-    font-family: "Fredoka One",-apple-system,BlinkMacSystemFont,"Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica","Arial",sans-serif;
-    font-weight: 900;
-    font-size: 2.125rem;
-    color: #4caf50;
-    text-align: center;
-    
+.titleSorteoSimple {
+  margin: 0;
+  font-family: "Fredoka One", -apple-system, BlinkMacSystemFont, "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica", "Arial",
+    sans-serif;
+  font-weight: 900;
+  font-size: 2.125rem;
+  color: #4caf50;
+  text-align: center;
 }
 
-.descripcionSorteoSimple
-{
-      margin: 0px;
-    font-family: Montserrat, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    font-size: 0.875rem;
-    line-height: 1.75;
-    color: rgba(0, 0, 0);
-    text-align: center;
+.descripcionSorteoSimple {
+  margin: 0px;
+  font-family: Montserrat, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+    Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: rgba(0, 0, 0);
+  text-align: center;
 }
 
-.divSorteoSimple
-{
-      width: 100%;
-    margin: auto;
-    align-items: end;
-    display: flex;
+.divSorteoSimple {
+  width: 100%;
+  margin: auto;
+  align-items: end;
+  display: flex;
 }
 
-.controlesSorteoSimple
-{
-    
-    display: block;
-    margin: auto;
-    text-align: center;
+.tableListaSorteos {
+  margin: auto;
+  padding-top: 5%;
+  width: 100%;
+}
+
+.tableListaSorteos table {
+  width: 75%;
+  max-width: 75%;
+  margin: auto;
+  border-collapse: collapse;
+  display: block;
+  min-width: 75%;
+  word-wrap: break-word;
+}
+
+.tableListaSorteos .tituloTabla {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+}
+
+.tableListaSorteos td,
+.tableListaSorteos th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  max-width: 500px;
+  word-wrap: break-word;
+}
+
+.closeTabla {
+  background-color: red !important;
+  color: white;
+}
+
+.tableListaSorteos table th {
+  background-color: #4caf50;
+}
+
+.tableListaSorteos table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.controlesSorteoSimple {
+  display: block;
+  margin: auto;
+  text-align: center;
   clear: both;
-    
 }
-.fieldParticipantes
-{
-      border-radius: 0.25rem;
-    border: 0.0625rem solid rgba(0,0,0,.3);
-    background-color: rgb(255, 255, 255, 0.75);
-    /* position: relative; */
-    float: left;
-    width: 75%;
-    margin: auto;
-    
+.fieldParticipantes {
+  border-radius: 0.25rem;
+  border: 0.0625rem solid rgba(0, 0, 0, 0.3);
+  background-color: rgb(255, 255, 255, 0.75);
+  /* position: relative; */
+  float: left;
+  width: 75%;
+  margin: auto;
 }
 
-.leyendaParticipantes
-{
+.leyendaParticipantes {
   padding: 0 0.375rem;
-    color: rgba(0,0,0,.6);
-    font-size: .75rem;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.75rem;
 }
 
-.ListaDeParticipantes
-{
+.ListaDeParticipantes {
   padding: 0.75rem;
-    overflow: hidden;
+  overflow: hidden;
 }
 
-.insertarParticipante
-{
+.insertarParticipante {
   margin-bottom: 10px;
   display: block;
- margin-right: auto;
- margin-left: auto;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-#elementoParticipante
-{
+#elementoParticipante {
   margin-top: 10px;
   margin: 5px;
   padding: 10px;
@@ -148,55 +171,52 @@
   height: 32px;
   background-color: rgba(0, 0, 0, 0.08);
   border-radius: 16px;
-
 }
 
 .borrarParticipante {
   color: red;
 }
 
-
-
-#btnBorrar
-{
+#btnBorrar {
   margin-left: 5px;
   color: red;
 }
 
-.btnSortear , .btnRepetir
-{
+.btnSortear,
+.btnRepetir {
   backface-visibility: hidden;
   position: relative;
   cursor: pointer;
   display: inline-block;
   white-space: nowrap;
-  background: linear-gradient(180deg,#ce8 0%,#592 100%);
+  background: linear-gradient(180deg, #ce8 0%, #592 100%);
   border-radius: 100px;
   border: 0.5px solid #8c4;
   border-width: 0.5px 0.5px 0.5px 0.5px;
   padding: 7px 40px 9px 15px;
-  box-shadow: inset 0px 1px 0px rgba(255,255,255,0.6),0px 1px 2px rgba(0,0,0,0.5);
-    color: #ffffff;
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.6),
+    0px 1px 2px rgba(0, 0, 0, 0.5);
+  color: #ffffff;
   font-size: 16px;
   font-family: consolas;
   font-weight: 900;
   font-style: normal;
-  text-shadow: 0px 1px 0px rgba(255,255,255,0.5)
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.5);
 }
 
-.btnSortear > button , .btnRepetir >  button
-{
-   color: #372;
+.btnSortear > button,
+.btnRepetir > button {
+  color: #372;
   font-size: 10px;
   font-family: transcript;
   font-weight: 200;
   font-style: italic;
   text-align: center;
-  margin: -3px 0px 0px 0px
+  margin: -3px 0px 0px 0px;
 }
 
-.btnSortear > i , .btnRepetir > i 
-{
+.btnSortear > i,
+.btnRepetir > i {
   color: #372;
   font-size: 1.1em;
   background: #fff;
@@ -207,42 +227,39 @@
   margin: 0px 0px 0px 0px;
   position: absolute;
   top: 0px;
-  right: 0px
+  right: 0px;
 }
 
-.btnBorrarParticipantes
-{
-   backface-visibility: hidden;
+.btnBorrarParticipantes {
+  backface-visibility: hidden;
   position: relative;
   cursor: pointer;
   display: inline-block;
   white-space: nowrap;
-  background: linear-gradient(0deg,#ff9 0%,#fff 50%,#e92 100%);
+  background: linear-gradient(0deg, #ff9 0%, #fff 50%, #e92 100%);
   border-radius: 0px;
   border: 4px solid #c82;
   border-width: 4px 4px 4px 4px;
   padding: 10px 20px 10px 51px;
-    color: #000000;
+  color: #000000;
   font-size: 16px;
   font-family: verdana;
   font-weight: 900;
-  font-style: normal
+  font-style: normal;
 }
 
-.btnBorrarParticipantes > button
-{
+.btnBorrarParticipantes > button {
   color: #999;
   font-size: 10px;
   font-family: Helvetica Neue;
   font-weight: initial;
   font-style: normal;
   text-align: center;
-  margin: 0px 0px 0px 0px
+  margin: 0px 0px 0px 0px;
 }
 
-.btnBorrarParticipantes > i
-{
-   color: #000000;
+.btnBorrarParticipantes > i {
+  color: #000000;
   font-size: 1em;
   background: #c82;
   border-radius: 0px;
@@ -254,186 +271,190 @@
   top: -1px;
   left: 0px;
   bottom: -1px;
-  width: 35px
+  width: 35px;
 }
 
-.separador
-{
-   border-top: 2px solid green;
-   margin: 0px;
+.separador {
+  border-top: 2px solid green;
+  margin: 0px;
 }
 
-.contadorParticipantes
-{
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    color: #c43e82!important;
+.contadorParticipantes {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #c43e82 !important;
 }
 
-.text-danger
-{
+.text-danger {
   background-color: red;
- color: white;
- width: 100%;
- padding: 10px;
- font-weight: bold;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  font-weight: bold;
 }
 
-
-.enlaceDescargar
-{
+.enlaceDescargar {
   padding-right: 100px;
   padding-left: 100px;
 }
 
-.btnCopy, .btnInfoSave
-{
+.btnCopy,
+.btnInfoSave {
   box-shadow: inset 0px 1px 0px 0px #f9eca0;
-    background: linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
-    background-color: #bddbfa;
-    border-radius: 100%;
-    border: 1px solid #84bbf3;
-    display: inline-block;
-    cursor: pointer;
-    color: #ffffff;
-    font-family: Arial;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 10px 10px;
-    text-decoration: none;
-    text-shadow: 0px 1px 0px #528ecc;
-  }
-
-  .btnMezclar {
-    box-shadow: inset 0px 1px 0px 0px #f9eca0;
-    background: linear-gradient(to bottom, #fabde8 5%, #ea80c3 100%);
-    background-color: #fabdf0;
-    border-radius: 100%;
-    border: 1px solid #f384dd;
-    display: inline-block;
-    cursor: pointer;
-    color: #ffffff;
-    font-family: Arial;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 10px 10px;
-    text-decoration: none;
-    text-shadow: 0px 1px 0px #cc5295;
-  }
-
-  .btnDelete, .btnCancel
-  {
-
-    background: linear-gradient(to bottom, #fe5d42 5%, #972d05 100%);
-    background-color: #b02d0a;
-    border-radius: 100%;
-    border: 1px solid #f65122;
-    display: inline-block;
-    cursor: pointer;
-    color: #ffffff;
-    font-family: Arial;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 10px 10px;
-    text-decoration: none;
-    text-shadow: 0px 1px 0px #8b3302;
-  }
-
-
-    .btnImport
-    {
-          box-shadow: inset 0px 1px 0px 0px #f9eca0;
-    background: linear-gradient(to bottom, #d0a75b 5%, #ca8808 100%);
-    border-radius: 100%;
-    border: 1px solid #c49518;
-    display: inline-block;
-    cursor: pointer;
-    color: #ffffff;
-    font-family: Arial;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 10px 10px;
-    text-decoration: none;
-    }
-
-    .btnExport, .btnSaveLocal
-    {
-    box-shadow: inset 0px 1px 0px 0px #f9eca0;
-    background: linear-gradient(to bottom, #53dc5e 5%, #1aa31f 100%);
-    background-color: #bddbfa;
-    border-radius: 100%;
-    border: 1px solid #56e65c;
-    display: inline-block;
-    cursor: pointer;
-    color: #ffffff;
-    font-family: Arial;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 10px 10px;
-    text-decoration: none;
-    text-shadow: 0px 1px 0px #528ecc;
-    }
-
-    .btnSaveEx {
-      box-shadow: inset 0px 1px 0px 0px #f9eca0;
-    background: linear-gradient(to bottom, #dc53b3 5%, #a31a5a 100%);
-    background-color: #fabdde;
-    border-radius: 100%;
-    border: 1px solid #e656a5;
-    display: inline-block;
-    cursor: pointer;
-    color: #ffffff;
-    font-family: Arial;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 10px 10px;
-    text-decoration: none;
-    text-shadow: 0px 1px 0px #cc5299;
-    }
-
-    .btnSaveMixto {
-      box-shadow: inset 0px 1px 0px 0px #f9eca0;
-    background: linear-gradient(to right, #53dc5e 5%, #dc53b3 100%);
-    background-color: #bde4fa;
-    border-radius: 100%;
-    border: 1px solid #56c9e6;
-    display: inline-block;
-    cursor: pointer;
-    color: #ffffff;
-    font-family: Arial;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 10px 10px;
-    text-decoration: none;
-    text-shadow: 0px 1px 0px #52a9cc;
-    }
-
-    .btnDownload {
-      box-shadow: inset 0px 1px 0px 0px #f9eca0;
-    background: linear-gradient(to bottom, #e4ee59 5%, #adca08 100%);
-    border-radius: 100%;
-    border: 1px solid #dbe91d;
-    display: inline-block;
-    cursor: pointer;
-    color: #ffffff;
-    font-family: Arial;
-    font-size: 15px;
-    font-weight: bold;
-    padding: 10px 10px;
-    text-decoration: none;
-    }
-
-    
-
-  .tooltipCopy , .tooltipImport , .tooltipExport, .tooltipDelete, .tooltipMezclar, .tooltipCancel, .tooltipSaveLocal , .tooltipSaveEx, .tooltipSaveMixto,
-  .tooltipDownload, .tooltipInfoSave{
-      position: relative;
-    display: inline-block;
-    margin-right: 2.5px;
+  background: linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
+  background-color: #bddbfa;
+  border-radius: 100%;
+  border: 1px solid #84bbf3;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 10px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #528ecc;
 }
 
-.tooltipCopy .tooltipCopytext, .tooltipImport .tooltipImporttext , .tooltipExport .tooltipExporttext, .tooltipDeletetext, .tooltipMezclartext, .tooltiptext{
+.btnMezclar {
+  box-shadow: inset 0px 1px 0px 0px #f9eca0;
+  background: linear-gradient(to bottom, #fabde8 5%, #ea80c3 100%);
+  background-color: #fabdf0;
+  border-radius: 100%;
+  border: 1px solid #f384dd;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 10px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #cc5295;
+}
+
+.btnDelete,
+.btnCancel {
+  background: linear-gradient(to bottom, #fe5d42 5%, #972d05 100%);
+  background-color: #b02d0a;
+  border-radius: 100%;
+  border: 1px solid #f65122;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 10px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #8b3302;
+}
+
+.btnImport {
+  box-shadow: inset 0px 1px 0px 0px #f9eca0;
+  background: linear-gradient(to bottom, #d0a75b 5%, #ca8808 100%);
+  border-radius: 100%;
+  border: 1px solid #c49518;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 10px;
+  text-decoration: none;
+}
+
+.btnExport,
+.btnSaveLocal {
+  box-shadow: inset 0px 1px 0px 0px #f9eca0;
+  background: linear-gradient(to bottom, #53dc5e 5%, #1aa31f 100%);
+  background-color: #bddbfa;
+  border-radius: 100%;
+  border: 1px solid #56e65c;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 10px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #528ecc;
+}
+
+.btnSaveEx {
+  box-shadow: inset 0px 1px 0px 0px #f9eca0;
+  background: linear-gradient(to bottom, #dc53b3 5%, #a31a5a 100%);
+  background-color: #fabdde;
+  border-radius: 100%;
+  border: 1px solid #e656a5;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 10px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #cc5299;
+}
+
+.btnSaveMixto {
+  box-shadow: inset 0px 1px 0px 0px #f9eca0;
+  background: linear-gradient(to right, #53dc5e 5%, #dc53b3 100%);
+  background-color: #bde4fa;
+  border-radius: 100%;
+  border: 1px solid #56c9e6;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 10px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #52a9cc;
+}
+
+.btnDownload {
+  box-shadow: inset 0px 1px 0px 0px #f9eca0;
+  background: linear-gradient(to bottom, #e4ee59 5%, #adca08 100%);
+  border-radius: 100%;
+  border: 1px solid #dbe91d;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 10px;
+  text-decoration: none;
+}
+
+.tooltipCopy,
+.tooltipImport,
+.tooltipExport,
+.tooltipDelete,
+.tooltipMezclar,
+.tooltipCancel,
+.tooltipSaveLocal,
+.tooltipSaveEx,
+.tooltipSaveMixto,
+.tooltipDownload,
+.tooltipInfoSave {
+  position: relative;
+  display: inline-block;
+  margin-right: 2.5px;
+}
+
+.tooltipCopy .tooltipCopytext,
+.tooltipImport .tooltipImporttext,
+.tooltipExport .tooltipExporttext,
+.tooltipDeletetext,
+.tooltipMezclartext,
+.tooltiptext {
   visibility: hidden;
   width: 140px;
   background-color: #555;
@@ -450,10 +471,17 @@
   transition: opacity 0.3s;
 }
 
-.tooltipCopy .tooltipCopytext::after , .tooltipImport .tooltipImporttext::after , .tooltipExport .tooltipExporttext::after , 
-.tooltipDeletetext::after, .tooltipMezclar .tooltipMezclartext::after, .tooltipCancel .tooltiptext::after, .tooltipSaveLocal .tooltiptext::after, 
-.tooltipSaveEx .tooltiptext::after, .tooltipSaveMixto .tooltiptext::after, .tooltipDownload .tooltiptext::after,
-.tooltipInfoSave .tooltiptext::after{
+.tooltipCopy .tooltipCopytext::after,
+.tooltipImport .tooltipImporttext::after,
+.tooltipExport .tooltipExporttext::after,
+.tooltipDeletetext::after,
+.tooltipMezclar .tooltipMezclartext::after,
+.tooltipCancel .tooltiptext::after,
+.tooltipSaveLocal .tooltiptext::after,
+.tooltipSaveEx .tooltiptext::after,
+.tooltipSaveMixto .tooltiptext::after,
+.tooltipDownload .tooltiptext::after,
+.tooltipInfoSave .tooltiptext::after {
   content: "";
   position: absolute;
   top: 100%;
@@ -464,25 +492,31 @@
   border-color: #555 transparent transparent transparent;
 }
 
-.tooltipCopy:hover .tooltipCopytext , .tooltipImport:hover .tooltipImporttext , 
-.tooltipExport:hover .tooltipExporttext , .tooltipDelete:hover .tooltipDeletetext, 
-.tooltipMezclar:hover .tooltipMezclartext , .tooltipCancel:hover .tooltiptext , .tooltipSaveLocal:hover .tooltiptext, .tooltipSaveEx:hover .tooltiptext 
-, .tooltipSaveMixto:hover .tooltiptext, .tooltipDownload:hover .tooltiptext, .tooltipInfoSave:hover .tooltiptext{
+.tooltipCopy:hover .tooltipCopytext,
+.tooltipImport:hover .tooltipImporttext,
+.tooltipExport:hover .tooltipExporttext,
+.tooltipDelete:hover .tooltipDeletetext,
+.tooltipMezclar:hover .tooltipMezclartext,
+.tooltipCancel:hover .tooltiptext,
+.tooltipSaveLocal:hover .tooltiptext,
+.tooltipSaveEx:hover .tooltiptext,
+.tooltipSaveMixto:hover .tooltiptext,
+.tooltipDownload:hover .tooltiptext,
+.tooltipInfoSave:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
 }
 
-.inputEditarParticipante
-{
-      margin-top: 10px;
-    margin: 5px;
-    padding: 10px;
-    display: inline-flex;
-    align-items: center;
-    height: 32px;
-    background-color: rgba(0, 0, 0, 0.08);
-    border-radius: 16px;
-    border: 0px;
+.inputEditarParticipante {
+  margin-top: 10px;
+  margin: 5px;
+  padding: 10px;
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  background-color: rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  border: 0px;
 }
 
 .input-width {
@@ -491,27 +525,25 @@
   visibility: hidden;
 }
 
-.columnaOtrosSorteos
-{
-    width: 25%;
-    padding-right: 1.125rem;
-    padding-left: 1.125rem;
+.columnaOtrosSorteos {
+  width: 25%;
+  padding-right: 1.125rem;
+  padding-left: 1.125rem;
 }
 
-.descripcionSorteo a
-{
+.descripcionSorteo a {
   font-weight: bold;
 }
 
-.content{
+.content {
   margin: 10px 0;
 }
 
-.content p{
+.content p {
   font-size: 15px;
 }
 
-.content ul{
+.content ul {
   display: flex;
   flex-wrap: wrap;
   padding: 7px;
@@ -520,7 +552,7 @@
   border: 1px solid #a6a6a6;
 }
 
-.content ul input{
+.content ul input {
   flex: 1;
   padding: 5px;
   border: none;
@@ -528,16 +560,16 @@
   font-size: 16px;
 }
 
-.content ul  li{
+.content ul li {
   color: #333;
   margin: 4px 3px;
   list-style: none;
   border-radius: 5px;
-  background: #F2F2F2;
+  background: #f2f2f2;
   padding: 5px 8px 5px 10px;
   border: 1px solid #e3e1e1;
 }
-.content ul li i{
+.content ul li i {
   height: 20px;
   width: 20px;
   color: red;
@@ -553,37 +585,29 @@
   justify-content: space-between;
 }
 
-.fieldParticipantes :where(.title, li, li i, .details){
+.fieldParticipantes :where(.title, li, li i, .details) {
   display: flex;
   align-items: center;
 }
 
-.field_numPremios
-{
-       border-radius: 0.25rem;
-    border: 0.0625rem solid rgba(0,0,0,.3);
-    position: relative;
-    width: 25%;
-    margin: auto;
-    text-align: center;
-    background-color: rgb(255, 255, 255, 0.75);
+.field_numPremios {
+  border-radius: 0.25rem;
+  border: 0.0625rem solid rgba(0, 0, 0, 0.3);
+  position: relative;
+  width: 25%;
+  margin: auto;
+  text-align: center;
+  background-color: rgb(255, 255, 255, 0.75);
 }
 
-.field_numPremios ul
-{
-  
+.field_numPremios ul {
   padding: 7px;
   display: flex;
   flex-wrap: wrap;
   padding: 7px;
-  
-
-  
 }
 
-.field_numPremios ul input
-{
-  
+.field_numPremios ul input {
   background-color: #fbfdeb;
   border: none;
   outline: none;
@@ -594,27 +618,23 @@
   outline: none;
   font-size: 16px;
   text-align: right;
-  
 }
 
-.leyenda_numPremios
-{
+.leyenda_numPremios {
   padding: 0 0.375rem;
-  color: rgba(0,0,0,.6);
-  font-size: .75rem;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.75rem;
 }
 
-.contenedorTextoCarga
-{
-  overflow: hidden; 
+.contenedorTextoCarga {
+  overflow: hidden;
   display: flex;
-  align-items: center; 
+  align-items: center;
   justify-content: center;
 }
 
-#textoCarga
-{
-  position: relative; 
+#textoCarga {
+  position: relative;
   font-size: 4em;
   letter-spacing: 2.5px;
   font-family: sans-serif;
@@ -623,35 +643,31 @@
   color: #333;
 }
 
-#textoCarga::before
-{
+#textoCarga::before {
   content: "Generando resultados...";
-   color: #4caf50;
+  color: #4caf50;
   overflow: hidden;
   position: absolute;
   top: 0;
-  left : 0;
+  left: 0;
   border-bottom: 16px solid #4caf50;
   animation: load 3s linear infinite;
   white-space: nowrap;
-  
 }
 
-@keyframes load 
-{
+@keyframes load {
   0% {
     width: 0;
   }
-  100%{
-    width:100%;
+  100% {
+    width: 100%;
   }
 }
 
-.containerContador
-{
-   margin: 2% auto;
- background: #5EA226;
-border-radius: 0.8em;
+.containerContador {
+  margin: 2% auto;
+  background: #5ea226;
+  border-radius: 0.8em;
   border-radius: 0.8em;
   -moz-border-radius: 0.8em;
   -webkit-border-radius: 0.8em;
@@ -659,55 +675,53 @@ border-radius: 0.8em;
   font-weight: bold;
   line-height: 1.6em;
   text-align: center;
-  width: 1.6em; 
+  width: 1.6em;
   font-size: 64px;
 }
 
-/* Resultados */ 
+/* Resultados */
 
-body
-{
-    background-color: #fbfdeb;
+body {
+  background-color: #fbfdeb;
 }
 
-.titleResultados
-{
-  color: #4caf50; font-family: 'Raleway',sans-serif; font-size: 48px; font-weight: 800; line-height: 72px; margin: 0 0 24px; text-align: center; text-transform: uppercase;
+.titleResultados {
+  color: #4caf50;
+  font-family: "Raleway", sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 72px;
+  margin: 0 0 24px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
-.contenedorResultados
-{
- text-align: center;
-  
+.contenedorResultados {
+  text-align: center;
 }
 
 .contenedorResultados hr {
   height: 2px;
-   background-color: #4caf50;
-    margin-left: auto; 
-    margin-right: auto;
+  background-color: #4caf50;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.containerGanadores
-{
-    background-color: #fff;
-    margin: auto;
-    border-radius: 1rem;
-    width:25%;
+.containerGanadores {
+  background-color: #fff;
+  margin: auto;
+  border-radius: 1rem;
+  width: 25%;
   border: solid 2px #4caf50;
   margin-bottom: 2%;
-  
-   
 }
 
-.titleGanadores
-{
+.titleGanadores {
   font-size: 2.25rem;
   background-color: #4caf50;
-  color: #FFF;
+  color: #fff;
   border-top-left-radius: 0.75rem;
   border-top-right-radius: 0.75rem;
- 
 }
 
 .contenedorResultados ol {
@@ -716,16 +730,14 @@ body
   text-align: left;
   padding-left: 0px;
   margin-top: 0px;
-  
+
   margin-bottom: 2%;
- font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-font-size: 25px;
-text-decoration: none;
-font-style: normal;
-font-variant: normal;
-text-transform: none;
-  
-  
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 25px;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
 }
 
 .contenedorResultados li:before {
@@ -736,40 +748,43 @@ text-transform: none;
   margin-left: 5px;
 }
 
-.contenedorResultados ol li:nth-child(odd)
-{
-  background:  #f5f5f5;
+.contenedorResultados ol li:nth-child(odd) {
+  background: #f5f5f5;
 }
-.contenedorResultados ol li:nth-child(even)
-{
+.contenedorResultados ol li:nth-child(even) {
   background: #e5e5e5;
 }
 
-
-
-.fecha
-{
-   border-top: 1px solid  #4caf50; position: relative; top: 20px; margin-bottom: 25px;
+.fecha {
+  border-top: 1px solid #4caf50;
+  position: relative;
+  top: 20px;
+  margin-bottom: 25px;
 }
 
-.fecha span { 
- text-decoration: none;  font-size: 13px; text-align: center; padding: 2px 5px; background: #fff; width: 120px; margin: 0 auto;  position: relative; top: -10px;
+.fecha span {
+  text-decoration: none;
+  font-size: 13px;
+  text-align: center;
+  padding: 2px 5px;
+  background: #fff;
+  width: 120px;
+  margin: 0 auto;
+  position: relative;
+  top: -10px;
 }
 
-.resultados_titleApp
-{
-      font-size: 36px;
-    font-family: "Montserrat",Arial,sans-serif;
-    font-weight: 700;
-    color: #000;
-    margin-top: 10px;
-
+.resultados_titleApp {
+  font-size: 36px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 700;
+  color: #000;
+  margin-top: 10px;
 }
 
-.divListaGanadores
-{
-   max-height: 200px;
-  overflow-y:auto;
+.divListaGanadores {
+  max-height: 200px;
+  overflow-y: auto;
 }
 
 .descripcionSorteo a {
@@ -777,8 +792,7 @@ text-transform: none;
   color: #4caf50;
 }
 
-.form-control
-{
+.form-control {
   font-size: 26px;
   font-weight: 700;
   text-align: center;
@@ -788,19 +802,14 @@ text-transform: none;
   padding-bottom: 0;
   padding: 0;
   height: 40px;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   background-color: #fff;
   border-color: #d2d6dc;
   border-width: 1px;
   border-radius: 10px;
   border-radius: 4px;
-  padding: .5rem .75rem;
+  padding: 0.5rem 0.75rem;
   border-color: #e9e9e9;
   box-shadow: none;
   color: #4caf50;
 }
-
-
-
-
-

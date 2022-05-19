@@ -37,7 +37,7 @@
                     <button type=""  class="btnCopy" title="Copiar participantes"><span class="tooltipCopytext" id="myTooltipCopy">Copiar al portapapeles</span><i class="fas fa-copy"></i></button>
                 </div>
                  <div class="tooltipImport"> 
-                     <button type=""  class="btnImport" title="Importar participantes"><span class="tooltipImporttext" id="myTooltipImport">Importar participantes</span><i class="fas fa-upload"></i></button>
+                     <button type="" (click)="getSorteosLocales()"  class="btnImport" title="Importar participantes"><span class="tooltipImporttext" id="myTooltipImport">Importar participantes</span><i class="fas fa-upload"></i></button>
                   </div>
                  <div class="tooltipExport" *ngIf="participantes.length > 0">
                      <button type=""   class="btnExport" title="Guardar participantes" (click)="showSaveButtons()"><span class="tooltipExporttext" id="myTooltipExport">Guardar participantes</span><i class="fas fa-download"></i></button>
@@ -86,9 +86,27 @@
             
              <br>
         </div>
-        <script type="text/javascript">
+        
+        <div class="tableListaSorteos" *ngIf="mostrarTablaSorteosLocales">
+            <table>
+               <tr class="tituloTabla">
+                   <th colspan="3">Sorteos almacenados localmente</th>
+                   <th class="closeTabla" (click)="mostrarTablaSorteosLocales = false">X</th>
+               </tr>
+                <tr>
+                    <th>Titulo</th>
+                    <th>Participantes</th>
+                    <th>Acciones</th>
+                   
+                </tr>
 
-        </script>
+                <tr *ngFor="let sorteo of sorteosLocales">
+                    <td>Sorteo simple</td>
+                    <td>{{sorteo.participantes}}</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
 
         <div class="controlesSorteoSimple">
             <span class="descripcionSorteoSimple"> <br> En caso de no indicar el nº de premios, todos los participantes obtendrán un premio. </span> <br>  <br> 

@@ -225,6 +225,16 @@ export class SorteoSimpleComponent implements OnInit {
 
   }
 
+  showSaveInfoModal(){
+    Swal.fire({
+      icon: 'question',
+      title: '¿Dónde se almacenan mis sorteos?',
+      html: '<b>Almacenamiento local: </b>Almacenamiento en el navegador. (No es necesario inciar sesión. Los datos se guardan en un único navegador) '+ 
+      '<p> <b>Almacenamiento externo: </b> Almacenamiento en base de datos. (Inicio de sesión necesario. Datos más seguros. Datos compartidos con la aplicación móvil) </p>' +
+      '<p> <b>Almacenamiento mixto: </b> Los datos se almacenan en el navegador y en la base de datos. </p>'
+    });
+  }
+
   
 
   

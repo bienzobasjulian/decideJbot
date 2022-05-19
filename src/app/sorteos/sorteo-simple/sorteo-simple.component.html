@@ -55,7 +55,7 @@
              <div class="saveButtons" *ngIf="stateSaveButtons">
                 
                 <div class="tooltipInfoSave">  
-                    <button type=""  class="btnInfoSave" title="Info"><span class="tooltiptext" id="myTooltipInfoSave">Info</span><i class="fa fa-info-circle"></i></button>
+                    <button type="" (click)="showSaveInfoModal()"  class="btnInfoSave" title="Info"><span class="tooltiptext" id="myTooltipInfoSave">Info</span><i class="fa fa-info-circle"></i></button>
                 </div>
 
                 <div class="tooltipDownload">  

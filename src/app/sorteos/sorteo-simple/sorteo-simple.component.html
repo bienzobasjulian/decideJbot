@@ -32,22 +32,53 @@
        
       <div class="details">
    <p><span></span> {{participantes.length}} participantes disponibles</p>
-  <div class="botonesAccionLista" >
-                <div class="tooltipCopy">  
+  <div class="botonesAccionLista" *ngIf="stateMainButtons" >
+                <div class="tooltipCopy" *ngIf="participantes.length > 0">  
                     <button type=""  class="btnCopy" title="Copiar participantes"><span class="tooltipCopytext" id="myTooltipCopy">Copiar al portapapeles</span><i class="fas fa-copy"></i></button>
                 </div>
                  <div class="tooltipImport"> 
                      <button type=""  class="btnImport" title="Importar participantes"><span class="tooltipImporttext" id="myTooltipImport">Importar participantes</span><i class="fas fa-upload"></i></button>
                   </div>
-                 <div class="tooltipExport">
-                     <button type=""   class="btnExport" title="Guardar participantes" (click)="showSaveModal()"><span class="tooltipExporttext" id="myTooltipExport">Guardar participantes</span><i class="fas fa-download"></i></button>
+                 <div class="tooltipExport" *ngIf="participantes.length > 0">
+                     <button type=""   class="btnExport" title="Guardar participantes" (click)="showSaveButtons()"><span class="tooltipExporttext" id="myTooltipExport">Guardar participantes</span><i class="fas fa-download"></i></button>
                  </div>
-                 <div class="tooltipMezclar">
-                    <button type=""   class="btnMezclar" title="Mezclar participantes"><span class="tooltipMezclartext" id="myTooltipMezclar">Mezclar participantes</span><i class="fas fa-random"></i></button>
+                 <div class="tooltipMezclar" *ngIf="participantes.length > 0">
+                    <button type=""   class="btnMezclar" title="Mezclar participantes" (click)="mezclarParticipantes()"><span class="tooltipMezclartext" id="myTooltipMezclar">Mezclar participantes</span><i class="fas fa-random"></i></button>
                 </div>
-                 <div class="tooltipDelete">
+                 <div class="tooltipDelete" *ngIf="participantes.length > 0">
                      <button type=""  (click)="removeAllParticipantes()" class="btnDelete" title="Eliminar participantes"><span class="tooltipDeletetext" id="myTooltipDelete">Eliminar participantes</span><i class="fas fa-trash-alt"></i> </button>
                  </div>
+
+                
+             </div>
+
+             <div class="saveButtons" *ngIf="stateSaveButtons">
+                
+                <div class="tooltipInfoSave">  
+                    <button type=""  class="btnInfoSave" title="Info"><span class="tooltiptext" id="myTooltipInfoSave">Info</span><i class="fa fa-info-circle"></i></button>
+                </div>
+
+                <div class="tooltipDownload">  
+                    <button type=""  class="btnDownload" title="Descargar..."><span class="tooltiptext" id="myTooltipDownload">Descargar...</span><i class="fa fa-floppy-o"></i></button>
+                </div>
+
+                <div class="tooltipSaveLocal">  
+                    <button type=""  class="btnSaveLocal" (click)="saveSorteoLocalmente()" title="Guardar localmente"><span class="tooltiptext" id="myTooltipSaveLocal">Guardar localmente</span><i class="fas fa-home"></i></button>
+                </div>
+
+                <div class="tooltipSaveMixto">  
+                    <button type=""  class="btnSaveMixto" title="Almacenamiento mixto"><span class="tooltiptext" id="myTooltipSaveMixto">Almacenamiento mixto</span><i class="fa fa-arrows-h"></i></button>
+                </div>
+
+                <div class="tooltipSaveEx">  
+                    <button type=""  class="btnSaveEx" title="Guardar externamente"><span class="tooltiptext" id="myTooltipSaveEx">Guardar externamente</span><i class="fas fa-database"></i></button>
+                </div>
+
+                <div class="tooltipCancel">  
+                    <button type=""  class="btnCancel" (click)="showMainButtons()" title="Cancelar"><span class="tooltiptext" id="myTooltipCancel">Cancelar</span><i class="fas fa-times"></i></button>
+                </div>
+
+
              </div>
  </div>
  

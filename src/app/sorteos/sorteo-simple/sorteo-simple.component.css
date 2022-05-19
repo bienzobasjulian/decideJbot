@@ -287,7 +287,7 @@
   padding-left: 100px;
 }
 
-.btnCopy
+.btnCopy, .btnInfoSave
 {
   box-shadow: inset 0px 1px 0px 0px #f9eca0;
     background: linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
@@ -307,10 +307,10 @@
 
   .btnMezclar {
     box-shadow: inset 0px 1px 0px 0px #f9eca0;
-    background: linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
-    background-color: #bddbfa;
+    background: linear-gradient(to bottom, #fabde8 5%, #ea80c3 100%);
+    background-color: #fabdf0;
     border-radius: 100%;
-    border: 1px solid #84bbf3;
+    border: 1px solid #f384dd;
     display: inline-block;
     cursor: pointer;
     color: #ffffff;
@@ -319,10 +319,10 @@
     font-weight: bold;
     padding: 10px 10px;
     text-decoration: none;
-    text-shadow: 0px 1px 0px #528ecc;
+    text-shadow: 0px 1px 0px #cc5295;
   }
 
-  .btnDelete
+  .btnDelete, .btnCancel
   {
 
     background: linear-gradient(to bottom, #fe5d42 5%, #972d05 100%);
@@ -357,7 +357,7 @@
     text-decoration: none;
     }
 
-    .btnExport
+    .btnExport, .btnSaveLocal
     {
     box-shadow: inset 0px 1px 0px 0px #f9eca0;
     background: linear-gradient(to bottom, #53dc5e 5%, #1aa31f 100%);
@@ -375,13 +375,65 @@
     text-shadow: 0px 1px 0px #528ecc;
     }
 
-  .tooltipCopy , .tooltipImport , .tooltipExport, .tooltipDelete, .tooltipMezclar {
+    .btnSaveEx {
+      box-shadow: inset 0px 1px 0px 0px #f9eca0;
+    background: linear-gradient(to bottom, #dc53b3 5%, #a31a5a 100%);
+    background-color: #fabdde;
+    border-radius: 100%;
+    border: 1px solid #e656a5;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 10px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #cc5299;
+    }
+
+    .btnSaveMixto {
+      box-shadow: inset 0px 1px 0px 0px #f9eca0;
+    background: linear-gradient(to right, #53dc5e 5%, #dc53b3 100%);
+    background-color: #bde4fa;
+    border-radius: 100%;
+    border: 1px solid #56c9e6;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 10px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #52a9cc;
+    }
+
+    .btnDownload {
+      box-shadow: inset 0px 1px 0px 0px #f9eca0;
+    background: linear-gradient(to bottom, #e4ee59 5%, #adca08 100%);
+    border-radius: 100%;
+    border: 1px solid #dbe91d;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px 10px;
+    text-decoration: none;
+    }
+
+    
+
+  .tooltipCopy , .tooltipImport , .tooltipExport, .tooltipDelete, .tooltipMezclar, .tooltipCancel, .tooltipSaveLocal , .tooltipSaveEx, .tooltipSaveMixto,
+  .tooltipDownload, .tooltipInfoSave{
       position: relative;
     display: inline-block;
     margin-right: 2.5px;
 }
 
-.tooltipCopy .tooltipCopytext, .tooltipImport .tooltipImporttext , .tooltipExport .tooltipExporttext, .tooltipDeletetext, .tooltipMezclartext{
+.tooltipCopy .tooltipCopytext, .tooltipImport .tooltipImporttext , .tooltipExport .tooltipExporttext, .tooltipDeletetext, .tooltipMezclartext, .tooltiptext{
   visibility: hidden;
   width: 140px;
   background-color: #555;
@@ -398,7 +450,10 @@
   transition: opacity 0.3s;
 }
 
-.tooltipCopy .tooltipCopytext::after , .tooltipImport .tooltipImporttext::after , .tooltipExport .tooltipExporttext::after , .tooltipDeletetext::after, .tooltipMezclar tooltipMezclartext::after{
+.tooltipCopy .tooltipCopytext::after , .tooltipImport .tooltipImporttext::after , .tooltipExport .tooltipExporttext::after , 
+.tooltipDeletetext::after, .tooltipMezclar .tooltipMezclartext::after, .tooltipCancel .tooltiptext::after, .tooltipSaveLocal .tooltiptext::after, 
+.tooltipSaveEx .tooltiptext::after, .tooltipSaveMixto .tooltiptext::after, .tooltipDownload .tooltiptext::after,
+.tooltipInfoSave .tooltiptext::after{
   content: "";
   position: absolute;
   top: 100%;
@@ -409,7 +464,10 @@
   border-color: #555 transparent transparent transparent;
 }
 
-.tooltipCopy:hover .tooltipCopytext , .tooltipImport:hover .tooltipImporttext , .tooltipExport:hover .tooltipExporttext , .tooltipDelete:hover .tooltipDeletetext, .tooltipMezclar:hover .tooltipMezclartext{
+.tooltipCopy:hover .tooltipCopytext , .tooltipImport:hover .tooltipImporttext , 
+.tooltipExport:hover .tooltipExporttext , .tooltipDelete:hover .tooltipDeletetext, 
+.tooltipMezclar:hover .tooltipMezclartext , .tooltipCancel:hover .tooltiptext , .tooltipSaveLocal:hover .tooltiptext, .tooltipSaveEx:hover .tooltiptext 
+, .tooltipSaveMixto:hover .tooltiptext, .tooltipDownload:hover .tooltiptext, .tooltipInfoSave:hover .tooltiptext{
   visibility: visible;
   opacity: 1;
 }
@@ -508,6 +566,7 @@
     width: 25%;
     margin: auto;
     text-align: center;
+    background-color: rgb(255, 255, 255, 0.75);
 }
 
 .field_numPremios ul

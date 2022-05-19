@@ -29,6 +29,21 @@ export class SorteoSimpleComponent implements OnInit {
   tiempoCarga : number = 5;
   fechaSorteo : Date = new Date();
 
+  stateSaveButtons : boolean = false;
+  stateMainButtons : boolean = true;
+
+  showSaveButtons(){
+
+    this.stateMainButtons = false;
+    this.stateSaveButtons = true;
+
+  }
+
+  showMainButtons(){
+    this.stateSaveButtons = false;
+    this.stateMainButtons = true;
+  }
+
   addParticipante() {
     let valorParticipante = this.newParticipante;
     console.log(valorParticipante);
@@ -45,6 +60,11 @@ export class SorteoSimpleComponent implements OnInit {
 
   eliminarParticipante(i : number){
     this.participantes.splice(i, 1);
+
+    if (this.participantes.length == 0){
+      this.stateSaveButtons = false;
+      this.stateMainButtons = true;
+    }
   }
 
   setFocusOnNewParticipante(){
@@ -60,7 +80,8 @@ export class SorteoSimpleComponent implements OnInit {
   }
 
   mezclarParticipantes(){
-    this.participantes = this.participantes.sort();
+    this.participantes = this.participantes.sort(() => Math.random()-0.5);
+    
   }
 
   sortear(){
@@ -166,29 +187,7 @@ export class SorteoSimpleComponent implements OnInit {
     })
   }
 
-  showSaveModal(){
-
-    
-    Swal.fire({
-      title: 'Guarda tu sorteo',
-      text: 'El almacenamiento local se guarda en el navegador y no es necesario el inicio de sesión.',
-      showDenyButton: true,
-      showCancelButton: true,
-      cancelButtonColor: 'red',
-      denyButtonColor: 'purple',
-      showCloseButton: true,
-      confirmButtonColor: 'green',
-      cancelButtonText: 'Cancelar',
-      confirmButtonText: '<i class="fa fa-home" aria-hidden="true"></i> Localmente',
-      denyButtonText: `<i class="fa fa-cloud-download" aria-hidden="true"></i> Externamente`,
-    }).then((result) => {
-      if (result.isConfirmed) {
-      this.saveSorteoLocalmente();
-      } else if (result.isDenied) {
-        alert("Guardar extermamente;");
-      }
-    })
-  }
+ 
 
   saveSorteoLocalmente(){
     let sorteo : Sorteo = {
@@ -202,9 +201,17 @@ export class SorteoSimpleComponent implements OnInit {
     }
 
     sorteos = JSON.parse(localStorage.getItem('sorteos') || "") ;
-    sorteos.push(sorteo);
 
-    localStorage.setItem('sorteos', JSON.stringify(sorteos) )
+    if (sorteos.includes(sorteo)){
+      alert("Este sorteo ya está guardado");
+    }
+    else{
+      sorteos.push(sorteo);
+
+      localStorage.setItem('sorteos', JSON.stringify(sorteos) );
+      alert("Sorteo guardado localmemte");
+    }
+    
    
 
   

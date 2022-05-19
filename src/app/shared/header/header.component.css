@@ -9,6 +9,8 @@ nav {
   padding: 0 15px;
   font-family: sans-serif;
   font-size: 16px;
+  position: relative;
+  z-index: 1;
 }
 
 a {
@@ -94,16 +96,7 @@ a {
  
  
 
-/* nav ul li:not(.logo, .toggle, .button):hover {
-  background: #336b3e;
-}
-nav ul .item:not(.button) a:hover {
-  background: #336b3e;
-}
 
-ul li.subitem:hover {
-  background: #aaff77;
-} */
 
 .active .item {
   display: block;
@@ -152,7 +145,7 @@ ul li.subitem:hover {
 }
 
 /* Tablet  */
-@media all and (min-width: 700px) {
+@media all and (min-width: 480px) {
   .menu {
     justify-content: center;
   }
@@ -191,7 +184,7 @@ ul li.subitem:hover {
 }
 
 /* Desktop */
-@media all and (min-width: 960px) {
+@media all and (min-width: 1024px) {
   .item {
     order: 1;
     position: relative;

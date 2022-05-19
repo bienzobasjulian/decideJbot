@@ -1,95 +1,168 @@
 <div class="fullContainer">
     <div class="contenedorContenido">
         <div class="sectionSorteos">
-            <h1 class="tituloSeccion">Elige un sorteo <img id="icon_InfoTitleSorteos" src="../../../assets/img/information.png"></h1>
+            <h1 class="tituloSeccion">Elige un sorteo</h1>
 
             <div class="menuSorteos">
-                <div class="card">
+                <div class="card" routerLink="sorteos/SorteoSimple">
                     <img src="../../../assets/img/raffle.png">
-                    <div class="titleCard">
-                        <h4>Sorteo simple</h4>
-                    </div>
+                   <h3>Sorteo simple</h3>
+                   <div class="line"></div>
+                   <p></p>
                 </div>
 
-                <div class="card">
+                <div class="card disabledCard">
                     <img src="../../../assets/img/raffle1.png">
-                    <div class="titleCard">
-                        <h4>Sorteo avanzado</h4>
-                    </div>
+                    <h3>Sorteo avanzado</h3>
+                    <div class="line"></div>
+                        <p>¡Incluye más opciones!</p>
+                    
                 </div>
 
-                <div class="card">
+                <div class="card disabledCard">
                     <img src="../../../assets/img/roulette.png">
-                    <div class="titleCard">
-                        <h4>Ruleta</h4>
-                    </div>
+                    <h3>Sorteo con ruleta</h3>
+                    <div class="line"></div>
+                        <p>¡Un ganador por tirada!</p>
+                   
                 </div>
 
-                <div class="card">
+                <div class="card" routerLink="sorteos/NumerosAleatorios">
                     <img src="../../../assets/img/numbers.png">
-                    <div class="titleCard">
-                        <h4>Números aleatorios</h4>
-                    </div>
+                    <h3>Números aleatorios</h3>
+                    <div class="line"></div>
+                        <p></p>
                 </div>
 
-                <div class="card">
+                <div class="card disabledCard">
                     <img src="../../../assets/img/group.png">
-                    <div class="titleCard">
-                        <h4>Generar grupos</h4>
-                    </div>
+                    <h3>Generar grupos</h3>
+                    <div class="line"></div>
+                        <p></p>
                 </div>
 
-                <div class="card">
+                <div class="card disabledCard">
                     <img src="../../../assets/img/relaciones.png">
-                    <div class="titleCard">
-                        <h4>Asociar elementos</h4>
-                    </div>
+                    <h3>Asociar elementos</h3>
+                    <div class="line"></div>
+                        <p>Relaciona elementos de diferentes listas</p>
                 </div>
 
-                <div class="card">
+                <div class="card disabledCard">
                     <img src="../../../assets/img/coins.png">
-                    <div class="titleCard">
-                        <h4>Cara o cruz</h4>
-                    </div>
+                    <h3>Cara o cruz</h3>
+                    <div class="line"></div>
                 </div>
 
                 
-                <div class="card">
-                    <img src="../../../assets/img/arrow.png">
-                    <div class="titleCard">
-                        <h4>Girar una flecha</h4>
-                    </div>
+                <div class="card cardFlecha disabledCard">
+                    <img class="iconFlecha" src="../../../assets/img/arrow.png">
+                    <h3>Girar una flecha</h3>
+                    <div class="line"></div>
+                        <p></p>
                 </div>
 
                 
-                <div class="card">
+                <div class="card disabledCard">
                     <img src="../../../assets/img/dado.png">
-                    <div class="titleCard">
-                        <h4>Lanzar un dado</h4>
-                    </div>
+                    <h3>Lanzar un dado</h3>
+                    <div class="line"></div>
+                        <p></p>
                 </div>
 
                 
-                <div class="card">
+                <div class="card disabledCard">
                     <img src="../../../assets/img/gift.png">
-                    <div class="titleCard">
-                        <h4>Amigo invisible</h4>
-                    </div>
+                    <h3>Amigo invisible</h3>
+                    <div class="line"></div>
+                        <p></p>
                 </div>
 
-                <div class="card">
+                <div class="card disabledCard">
                     <img src="../../../assets/img/post.png">
-                    <div class="titleCard">
-                        <h4>Sorteo en publicaciones</h4>
-                    </div>
+                    <h3>Sorteo en publicaciones</h3>
+                    <div class="line"></div>
+                        <p>¡Realiza un sorteo en tus publicaciones de tus redes sociales!</p>
                 </div>
 
-                <div class="card">
+                <div class="card disabledCard">
                     <img src="../../../assets/img/torneo.png">
-                    <div class="titleCard">
-                        <h4>Torneos</h4>
-                    </div>
+                    <h3>Torneos</h3>
+                    <div class="line"></div>
+                        <p></p>
                 </div>
+
+                <div class="card disabledCard">
+                    <img src="../../../assets/img/exclusive.png">
+                    <h3>Sorteo exclusivos de la aplicación</h3>
+                    <div class="line"></div>
+                        <p>¡Participa en sorteos creados para usuarios registrados en la aplicación!</p>
+                </div>
+
+                <div class="fullCard disabledCard">
+                   
+                        <img src="../../../assets/img/historial.png">
+                       
+                            <span> Historial de sorteos </span>
+                       
+                   
+                    
+                    
+                </div>
+
+
+                
+            </div>
+        </div>
+        <hr>
+        <div class="sectionDecisiones">
+            <h1 class="tituloSeccion">Toma una decisión</h1>
+
+            <div class="menuDecisiones">
+
+                <div class="card disabledCard">
+                    <img src="../../../assets/img/tv.png">
+                    <h3>Series</h3>
+                    <div class="line"></div>
+                        <p>¿Qué serie veo hoy?</p>
+                    
+                </div>
+
+                <div class="card disabledCard">
+                    <img src="../../../assets/img/film.png">
+                    <h3>Peliculas</h3>
+                    <div class="line"></div>
+                        <p>¿Qué película veo hoy?</p>
+                    
+                </div>
+
+                <div class="card disabledCard">
+                    <img src="../../../assets/img/videogames.png">
+                    <h3>Videojuegos</h3>
+                    <div class="line"></div>
+                        <p>¿A que juego hoy?</p>
+                    
+                </div>
+
+                <div class="card disabledCard">
+                    <img src="../../../assets/img/music.png">
+                    <h3>Música</h3>
+                    <div class="line"></div>
+                        <p>¿Qué escucho hoy?</p>
+                    
+                </div>
+
+                <div class="fullCard disabledCard">
+       
+                    <img src="../../../assets/img/historial.png">
+                   
+                        <span> Historial de decisiones </span>
+                   
+               
+                
+                
+            </div>
+
             </div>
         </div>
     </div>

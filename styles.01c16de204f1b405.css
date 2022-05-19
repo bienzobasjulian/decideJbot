@@ -1,0 +1,1 @@
+body{padding:0;margin:0 auto}html,body{height:100%}*{box-sizing:border-box}.column{float:left;padding:10px}.row:after{content:"";display:table;clear:both}.fullContainer{display:flex;padding:0;flex-direction:column;justify-content:space-between;flex:1 1;background-color:#fbfdeb}.contenedorContenido{display:flex;flex-direction:column;flex-grow:1;padding-top:2.25rem}

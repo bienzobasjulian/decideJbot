@@ -1,0 +1,69 @@
+<div *ngIf="resultado">
+  <div class="fullContainer">
+    <div class="contenedorContenido">
+      <div class="divIntroSorteo">
+        <mat-card *ngIf="resultado.ganadores.length === 0">
+          <mat-card-title class="titleSorteo">{{
+            resultado.sorteo.titulo
+          }}</mat-card-title>
+          <mat-card-content>
+            <b>{{ resultado.sorteo.participantes.length }} participantes: </b>
+            <p>
+              <mat-chip-list>
+                <mat-chip
+                  *ngFor="let participante of resultado.sorteo.participantes"
+                >
+                  {{ participante }}
+                </mat-chip>
+              </mat-chip-list>
+            </p>
+
+            <p>
+              <mat-divider></mat-divider>
+            </p>
+
+            <p></p
+          ></mat-card-content>
+
+          <mat-card-actions>
+            <span
+              >Se repartirán {{ resultado.sorteo.numPremios }} premios dentro
+              de:
+            </span>
+            <p></p>
+
+            <div class="cuentaAtras">{{ demo }}</div>
+          </mat-card-actions>
+
+          <mat-card-footer>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+          </mat-card-footer>
+        </mat-card>
+
+        <mat-card *ngIf="resultado.ganadores.length > 0" >
+
+            <mat-card-title class="titleSorteo">{{resultado.sorteo.titulo}}</mat-card-title>
+            <mat-card-content>
+                <b>{{resultado.sorteo.numPremios}} premios: </b>
+
+                <p> 
+                
+                <ol>
+                    <li *ngFor="let ganador of resultado.ganadores">{{ganador}}</li>
+                </ol>
+
+                <p>
+            </mat-card-content>
+            <mat-divider></mat-divider>
+
+            <mat-card-actions>
+                <p>{{resultado.fecha | date:'dd/MM/yyyy HH:mm:ss'}}</p>
+            </mat-card-actions>
+        
+        </mat-card>
+
+        
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -7,14 +8,40 @@ import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private eRef: ElementRef) { }
+  public isLogged = false;
 
-  ngOnInit(): void {
+  constructor(private eRef: ElementRef, private authService : AuthService) { }
+
+ async ngOnInit() {
+
+    const user = await this.authService.getCurrentUser();
+    if (user){
+      
+      this.isLogged = true;
+    }
   }
 
   menuActivado : boolean = false;
   menuSorteosActivado : boolean = false;
   menuDecisionesActivado : boolean = false;
+
+  usuarioLogueado = this.authService.getUserLogged();
+  
+  
+  
+  printUsuarioLog(){
+    
+
+    this.authService.getUserLogged().subscribe(res => {
+      console.log(res?.email);
+    
+    });
+  }
+
+  logOut(){
+    this.authService.logOut();
+    
+  }
 
   toggleMenu (){
     this.menuActivado = !this.menuActivado;

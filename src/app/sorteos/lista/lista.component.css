@@ -1,0 +1,35 @@
+.resultadosContainer{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.cardContainer {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 300x;
+    margin: 12px;
+    cursor: pointer;
+}
+
+.titleSorteo{
+   
+    color: #4caf50;
+}
+
+
+.title {
+    margin: 0;
+    font-family: "Fredoka One", -apple-system, BlinkMacSystemFont, "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica", "Arial",
+      sans-serif;
+    font-weight: 900;
+    font-size: 3.2rem;
+    color: #4caf50;
+    text-align: center;
+}
+

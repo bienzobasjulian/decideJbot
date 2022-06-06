@@ -13,7 +13,7 @@
     -moz-box-flex: 1;
     flex: 1 1;
     background-color: #fbfdeb;
-     height: 100%;  
+     
 }
 
 .contenedorContenido
@@ -55,7 +55,7 @@
 
 .columnaSorteos
 {
-    width: 75%;
+    width: 100%;
 }
 
 
@@ -87,13 +87,14 @@
     color: rgba(0, 0, 0);
     text-align: center;
 }
-
-.columnaOtrosSorteos
-{
-    width: 25%;
-    padding-right: 1.125rem;
-    padding-left: 1.125rem;
+.columnaOtrosSorteos {
+  display: none;
+  width: 25%;
+  padding-right: 1.125rem;
+  padding-left: 1.125rem;
 }
+
+
 
 .descripcionSorteo a
 {
@@ -172,6 +173,8 @@
 
 
 
+
+
 .controlesNumerosAleatorios
 {
   text-align: center;
@@ -228,4 +231,85 @@
 .descripcionSorteo a {
   text-decoration: none;
   color: #4caf50;
+}
+
+.contenedorResultados {
+  text-align: center;
+}
+
+.titleResultados {
+  color: #4caf50;
+  font-family: "Raleway", sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 72px;
+  margin: 0 0 24px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.containerNumeros{
+
+  background-color: #fff;
+  margin: auto;
+  border-radius: 1rem;
+  width: fit-content;
+  max-width: 50%;
+  border: solid 2px #4caf50;
+  margin-bottom: 2%;
+  display: flex;
+  padding: 12px;
+  flex-wrap: wrap;
+
+  
+}
+
+.numberBall {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+margin: 8px;
+background-color: #4caf50;
+}
+
+.numberBall div{
+    position: relative;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+}
+
+.numberBall div span {
+  position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 23px;
+            height: 23px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+}
+
+/* PC */
+@media(min-width: 1024px){
+
+  .columnaSorteos {
+    width: 75%;
+  }
+
+  .columnaOtrosSorteos
+{
+    display: block;
+    width: 25%;
+    padding-right: 1.125rem;
+    padding-left: 1.125rem;
+}
+
 }

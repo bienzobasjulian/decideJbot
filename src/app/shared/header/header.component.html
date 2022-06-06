@@ -5,6 +5,7 @@
             <a tabindex="0">Sorteos</a>
             <ul class="submenu">
                 <li class="subitem"><a routerLink="sorteos/SorteoSimple" routerLinkActive="selected">Sorteo Simple</a></li>
+                <li class="subitem"><a routerLink="sorteos/SorteoAvanzado" routerLinkActive="selected">Sorteo Avanzado</a></li>
                 <li class="subitem"><a routerLink="sorteos/NumerosAleatorios"  routerLinkActive="selected" >Números aleatorios</a></li> 
                 <li class="subitem"><a href="">Próximamente más</a></li>
                 
@@ -15,11 +16,22 @@
             <a tabindex="0">Decisiones </a>
             <ul class="submenu">
                 <li class="subitem" ><a routerLink="decisiones/Musica" routerLinkActive="selected">Música</a></li>
-                <li class="subitem"><a href="">Próximamente...</a></li>
+                <li class="subitem" (click)="printUsuarioLog()"><a href="#">Próximamente...</a></li>
             </ul>
         </li>
-        <li class="item button"><a href="">Iniciar sesión</a></li>
-        <li class="item button secondary"><a href="">Registrarse</a></li>
+
+        <ng-template #noLogueado>
+            <li class="item button"  ><a routerLink="auth/login">Iniciar sesión</a></li>
+            <li class="item button secondary" ><a routerLink="auth/register">Registrarse</a></li>
+        </ng-template>
+
+
+        <li class="item profileItem" *ngIf="usuarioLogueado | async as user; else noLogueado" (click)="printUsuarioLog()">
+            <img *ngIf="user.photoURL" [src]="user.photoURL" width="30" height="30">
+            <span class="userName">{{user.email}}</span>
+           
+            <button class="btnLogOut" (click)="logOut()">Cerrar sesión</button>
+        </li>
         <li class="toggle" *ngIf="!menuActivado" (click)="toggleMenu()"><a href="#"><i  class="fa fa-bars"></i></a></li>
         <li class="toggle" *ngIf="menuActivado" (click)="toggleMenu()"><a href="#"><i  class="fa fa-times"></i></a></li>
     </ul>

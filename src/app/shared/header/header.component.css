@@ -1,3 +1,5 @@
+/* Mobile menu */
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -36,7 +38,9 @@ a {
   padding: 9px 5px;
 }
 
-/* Mobile menu */
+
+
+
 
 .menu {
   display: flex;
@@ -61,6 +65,28 @@ a {
 
 .item.button {
   order: 2;
+}
+
+.item.profileItem {
+  order: 2;
+  border-bottom: 1px #444 solid;
+}
+
+.profileItem img {
+  border-radius: 100%;
+}
+
+.profileItem .userName{
+  color: white;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.profileItem button{
+  padding: 9px 5px;
+  background-color: red;
+  color: white;
+  border: none;
 }
 
 .item {
@@ -155,26 +181,14 @@ a {
   }
 
   .item.button {
-    width: auto;
-    order: 1;
-    display: block;
-  }
-
-  .toggle {
-    flex: 1;
-    text-align: right;
     order: 2;
   }
 
-  .button.secondary {
-    border: 0;
-  }
+  
 
-  .button.secondary a {
-    background: transparent;
-    border: 1px #ffd700 solid;
-    border-radius: 6px;
-  }
+  
+
+  
 
   
 
@@ -214,5 +228,14 @@ a {
 
   .listaDecisiones {
     padding-right: 2.5%;
+  }
+
+  .item.profileItem {
+    
+    border-bottom: 0;
+  }
+
+  .button.secondary {
+    border-bottom: 0;
   }
 }

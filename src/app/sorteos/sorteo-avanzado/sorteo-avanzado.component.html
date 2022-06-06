@@ -1,0 +1,474 @@
+<div class="fullContainer">
+  <div class="contenedorContenido">
+    <div class="row">
+      <div class="column columnaSorteos">
+        <div class="divIntroSorteo">
+
+          <div class="divPresentacion" *ngIf="pasoActual === 0">
+            <span class="titlePresentacion"
+              >Bienvenido a Sorteo Avanzado con DecideJbot</span
+            >
+            <p>Con la experiencia del Sorteo Avanzado en DecideJbot podrás:</p>
+            <ul>
+              <li>
+                Programar una fecha de realización
+                <small
+                  >(Los resultados no se obtendrán hasta dicha fecha)</small
+                >
+              </li>
+              <li>
+                Publicar y compartir los resultados del sorteo
+                <small>(Requiere inicio de sesión)</small>
+              </li>
+              <li>Índicar premios del sorteo</li>
+              <li>¡Y mucho más!</li>
+            </ul>
+
+            <button
+              mat-raised-button
+              class="btnComenzarSorteoAvanzado"
+              (click)="comenzarSorteoAvanzado()"
+            >
+              Comenzar
+            </button>
+          </div>
+
+          <div class="paso1" *ngIf="pasoActual === 1">
+            <span class="titlePaso">Paso 1: Identifica el sorteo</span>
+            <br />
+            <span class="descripcion"
+              >Añade un título o una descripción al sorteo para que se sepa de
+              que trata y/o se pueda identificar fácil y rápido.</span
+            >
+            <p>
+              <mat-form-field appearance="outline">
+                <mat-label>Título/Descripción</mat-label>
+                <input
+                  type="text"
+                  matInput
+                  class="titlePaso"
+                  [(ngModel)]="titulo"
+                />
+              </mat-form-field>
+
+              <br />
+
+              <button
+                mat-flat-button
+                color
+                class="btnGoPasoParticipantes"
+                (click)="goStepParticipantes()"
+              >
+                Participantes <i class="fa fa-chevron-right"></i>
+              </button>
+            </p>
+          </div>
+
+          <div class="paso2" *ngIf="pasoActual === 2">
+            <span class="titlePaso">Paso 2: ¿Quién participa?</span>
+            <br />
+            <span class="descripcion"
+              >Índica los participantes de "{{ titulo }}"
+            </span>
+            <p></p>
+
+            <div class="divSorteoSimple">
+              <fieldset
+                class="fieldParticipantes"
+                
+              >
+                <legend class="leyendaParticipantes">Participantes</legend>
+                <div class="content">
+                  <p class="infoPulsaIntro">
+                    Introduce un participante y pulsa intro.
+                  </p>
+                  <div class="divInput">
+                    <input
+                      #inputNewParticipante
+                      type="text"
+                      autocomplete="off"
+                      spellcheck="false"
+                      placeholder="Añade participante"
+                      id="inputParticipantes"
+                      [(ngModel)]="newParticipante"
+                      (keyup.enter)="addParticipante()"
+                    />
+
+                    <button
+                      class="btnAddParticipante"
+                      (click)="addParticipante()"
+                    >
+                      <i class="fa fa-plus" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <ul>
+                    <li
+                      *ngFor="let participante of participantes; let i = index"
+                      class="elementoParticipante"
+                    >
+                      <span class="textParticipante">{{ participante }}</span>
+                      <i
+                        class="fa fa-times borrarParticipante"
+                        (click)="eliminarParticipante(i)"
+                      ></i>
+                    </li>
+
+                    <input
+                      #inputNewParticipante
+                      type="text"
+                      autocomplete="false"
+                      spellcheck="false"
+                      placeholder="Añade participante"
+                      autocomplete="off"
+                      id="inputParticipantes"
+                      [(ngModel)]="newParticipante"
+                      (keyup.enter)="addParticipante()"
+                    />
+                  </ul>
+                </div>
+
+                <div class="details">
+                  <p>
+                    <span></span> {{ participantes.length }} participantes
+                    disponibles
+                  </p>
+                  <div class="botonesAccionLista">
+                    <button mat-icon-button [matMenuTriggerFor]="menu">
+                      <i class="fa fa-ellipsis-v"></i>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                      <button mat-menu-item *ngIf="participantes.length > 0">
+                        <i class="fas fa-copy"></i> Copiar al portapapeles
+                      </button>
+                      <button mat-menu-item [matMenuTriggerFor]="menuImportar">
+                        <i class="fas fa-upload"></i> Importar participantes
+
+                        <mat-menu #menuImportar="matMenu">
+                          <button mat-menu-item>
+                            <i class="fas fa-home"></i> Ver participantes
+                            locales
+                          </button>
+                          <button mat-menu-item>
+                            <i class="fa fa-arrows-v"></i> Ver todos los
+                            participantes
+                          </button>
+                          <button mat-menu-item>
+                            <i class="fas fa-database"></i> Ver participantes
+                            externos
+                          </button>
+                        </mat-menu>
+                      </button>
+
+                      <button
+                        mat-menu-item
+                        [matMenuTriggerFor]="menuExportar"
+                        *ngIf="participantes.length > 0"
+                      >
+                        <i class="fas fa-download"></i> Exportar participantes
+
+                        <mat-menu #menuExportar="matMenu">
+                          <button
+                            mat-menu-item
+                            
+                          >
+                            <i class="fas fa-home"></i> Guardar localmente
+                          </button>
+                          <button mat-menu-item>
+                            <i class="fa fa-arrows-v"></i> Almacenamiento mixto
+                          </button>
+                          <button
+                            mat-menu-item
+  
+                          >
+                            <i class="fas fa-database"></i> Almacenamiento
+                            externo
+                          </button>
+                        </mat-menu>
+                      </button>
+
+                      <button
+                        mat-menu-item
+                        *ngIf="participantes.length > 1"
+                        (click)="mezclarParticipantes()"
+                      >
+                        <i class="fas fa-random"></i> Mezclar participantes
+                      </button>
+
+                      <button
+                        mat-menu-item
+                        *ngIf="participantes.length > 0"
+                        (click)="removeAllParticipantes()"
+                      >
+                        <i class="fas fa-trash-alt"></i> Borrar participantes
+                      </button>
+                    </mat-menu>
+                  </div>
+                </div>
+              </fieldset>
+
+             
+
+           
+            </div>
+            <br>
+
+            <button
+              mat-flat-button
+              color
+              class="btnBack"
+              (click)="backStep()"
+            >
+            <i class="fa fa-chevron-left"></i> Título
+            </button>
+            <button
+              mat-flat-button
+              color
+              class="btnNext"
+              (click)=" goStepPremios()"
+              
+            >
+             Premios <i class="fa fa-chevron-right"></i>
+            </button>
+          </div>
+
+          <div class="paso3" *ngIf="pasoActual === 3">
+            <span class="titlePaso">Paso 3: Premios</span>
+            <br />
+            <span class="descripcion"
+              >¿Cuántos premios se reparten en "{{ titulo }}" ? 
+              <br> <small>Ten en cuenta que hay {{participantes.length}} participantes</small></span
+            >
+            <p>
+              <mat-form-field appearance="outline">
+                <mat-label>Nº de premios</mat-label>
+                <input
+                  type="number"
+                  matInput
+                  class="titlePaso"
+                  [(ngModel)]="numPremios"
+                  #inputNumPremios
+                  min = 0
+                />
+              </mat-form-field>
+              <br>
+
+              <small>En caso de no indicar el nº de premios, se repartirán tantos premios como participantes haya</small>
+
+             <p>
+
+              <button
+              mat-flat-button
+              color
+              class="btnBack"
+              (click)="backStep()"
+            >
+            <i class="fa fa-chevron-left"></i> Participantes
+            </button>
+              <button
+                mat-flat-button
+                color
+                class="btnNext"
+                (click)=" goStepFecha()"
+              >
+                Fecha<i class="fa fa-chevron-right"></i>
+              </button>
+            </p>
+          </div>
+
+          <div class="paso4" *ngIf="pasoActual === 4">
+            <span class="titlePaso">Paso 4: ¿Cuándo se realiza el sorteo?</span>
+            <br />
+            <span class="descripcion"
+              >¿Cuándo se realiza "{{ titulo }}" ? </span
+            >
+            <p>
+
+              <p-calendar [(ngModel)]="fecha" 
+              [showTime]="true" 
+              [showSeconds]="true"
+              inputId="time" 
+              [showIcon]="true"
+               dateFormat="dd/mm/yy"></p-calendar>
+               <button mat-button class="generarYa" (click)=" goStepConfirmSinFecha()">Generar los resultados ahora</button>
+           
+              <p>
+
+                <button
+              mat-flat-button
+              color
+              class="btnBack"
+              (click)="backStep()"
+            >
+            <i class="fa fa-chevron-left"></i> Premios
+            </button>
+              <button
+                mat-flat-button
+                color
+                class="btnNext"
+                (click)=" goStepConfirm()"
+              >
+                Finalizar <i class="fa fa-chevron-right"></i>
+              </button>
+             
+              
+            </p>
+          </div>
+
+          <div class="pasoFinal" *ngIf="pasoActual === 5">
+            <span class="titlePaso">{{titulo}}</span>
+            <br>
+            <span><b>{{participantes.length}} Participantes:  </b> {{participantes}} </span>
+            <br>
+            <span><b>Nº de premios: </b>{{numPremios}}</span>
+            <br>
+            <div *ngIf="!generarSinFecha">
+              <b>Fecha programada de resolución del sorteo: </b> {{fecha}}
+            </div>
+        
+            <p>
+        
+              <button
+              mat-flat-button
+              color
+              class="btnBack"
+              (click)="backStep()"
+            >
+            <i class="fa fa-chevron-left"></i> Fecha
+        
+            </button>
+              <button *ngIf="generarSinFecha"
+                mat-flat-button
+                color
+                class="btnNext"
+                (click)="goStepResultado()"
+              >
+               Confirmar y sortear <i class="fa fa-random"></i>
+              </button>
+        
+              <button *ngIf="!generarSinFecha"
+                mat-flat-button
+                color
+                class="btnNext"
+                (click)="goStepResultado()"
+                
+              >
+               Confirmar y programar el sorteo <i class="fa fa-clock-o"></i>
+              </button>
+
+        </div>
+
+        <div class="pasoResultados" *ngIf="pasoActual === 6">
+          <span class="titlePaso">{{titulo}}</span>
+          <p>
+
+        <span>Accede o comparte  los resultados con el siguiente enlace: </span>
+        <br>
+        <input type="text" [(ngModel)]="urlResultado" #inputUrlResultado class="titlePaso">
+        <button class="btnCopyUrl" (click)="copyUrl()"><i class="fa fa-clipboard"></i></button>
+        
+        
+
+
+          
+
+        </div>
+
+          
+        </div>
+      </div>
+
+      <div class="column columnaOtrosSorteos">
+        <div class="box">
+          <span class="descripcionSorteo">
+            Si deseas realizar un sorteo fácil y rápido, realiza un
+            <a href="#"> sorteo simple. </a>
+          </span>
+        </div>
+        <hr
+          style="
+            height: 2px;
+            background-color: #4caf50;
+            margin-left: auto;
+            margin-right: auto;
+          "
+        />
+        <div class="box">
+          <span class="descripcionSorteo">
+            Si deseas obtener un único ganador prueba a utilizar
+            <a href="#"> la ruleta. </a>
+          </span>
+        </div>
+        <hr
+          style="
+            height: 2px;
+            background-color: #4caf50;
+            margin-left: auto;
+            margin-right: auto;
+          "
+        />
+        <div class="box">
+          <span class="descripcionSorteo">
+            Si deseas sortear equipos o grupos, utiliza el
+            <a href="#"> generador de grupos. </a>
+          </span>
+        </div>
+        <hr
+          style="
+            height: 2px;
+            background-color: #4caf50;
+            margin-left: auto;
+            margin-right: auto;
+          "
+        />
+        <div class="box">
+          <span class="descripcionSorteo">
+            Prueba a <a href="#"> asociar elementos </a> de dos listas.
+          </span>
+        </div>
+        <hr
+          style="
+            height: 2px;
+            background-color: #4caf50;
+            margin-left: auto;
+            margin-right: auto;
+          "
+        />
+        <div class="box">
+          <span class="descripcionSorteo">
+            Prueba a
+            <a href="#"> obtener ganador del sorteo de una publicación </a>
+          </span>
+        </div>
+        <hr
+          style="
+            height: 2px;
+            background-color: #4caf50;
+            margin-left: auto;
+            margin-right: auto;
+          "
+        />
+        <div class="box">
+          <span class="descripcionSorteo">
+            Participa en <a href="#"> sorteos exclusivos </a> de DecideJbot
+          </span>
+        </div>
+        <hr
+          style="
+            height: 2px;
+            background-color: #4caf50;
+            margin-left: auto;
+            margin-right: auto;
+          "
+        />
+        <div class="box">
+          <span class="descripcionSorteo">
+            Prueba a
+            <a routerLink="/sorteos/NumerosAleatorios">
+              generar números aleatorios
+            </a></span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

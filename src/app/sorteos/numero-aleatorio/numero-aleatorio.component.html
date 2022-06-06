@@ -104,6 +104,22 @@
 
     
         </div>
+
+        <div class="row">
+            <div class="contenedorResultados" *ngIf="numeros.length > 0">
+                <span class="titleResultados">Números generados</span>
+                <div class="containerNumeros">
+                    <div class="numberBall" *ngFor="let numero of numeros">
+                        <div>
+                            <span >{{numero}}</span>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+
         
 
         

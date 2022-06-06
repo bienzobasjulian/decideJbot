@@ -1,0 +1,36 @@
+
+<mat-tab-group mat-align-tabs="center" animationDuration="0ms">
+    <mat-tab label="Resultados" *ngIf="resultados.length > 0">
+       <div class="resultadosContainer">
+           <span class="title">Mis resultados</span>
+           <div class="cardContainer">
+
+               <mat-card class="card" *ngFor="let resultado of resultados" routerLink="../resultado/{{resultado.id}}">
+                   <mat-card-title class="titleSorteo">
+                       {{resultado.sorteo.titulo}}
+                    </mat-card-title>
+
+                    <mat-card-content>
+                        <span>
+                            {{ resultado.sorteo.participantes.length }} participantes
+                        </span>
+                        <br>
+                        <span>
+                        Se repartirán {{ resultado.sorteo.numPremios }} premios
+                       </span>
+                       <p>
+                    </mat-card-content>
+
+                    <mat-divider></mat-divider>
+
+                    <mat-card-actions>
+                        <p>{{resultado.fecha | date:'dd/MM/yyyy HH:mm:ss'}}</p>
+                    </mat-card-actions>
+
+
+               </mat-card>
+
+           </div>
+       </div>
+    </mat-tab>
+  </mat-tab-group>

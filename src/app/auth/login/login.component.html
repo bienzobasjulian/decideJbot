@@ -1,0 +1,37 @@
+<div class="container">
+
+    <div *ngIf="usuarioLogueado | async as user; else noLogueado">
+        <div class="login-box">
+            <div class="box-header">
+                <h2>Ya estás logueado!</h2>
+            </div>
+           
+            <button>Inicio</button>
+        <button>Perfil</button>
+        <button>Cerrar sesión</button>
+        </div>
+        
+    </div>
+   
+    <ng-template #noLogueado  >
+        <div class="login-box">
+            <div class="box-header">
+                <h2>Iniciar sesión</h2>
+            </div>
+            <label for="email">Email</label>
+            <br/>
+            <input type="text" id="email" [(ngModel)]="usuario.email">
+            <br/>
+            <label for="password">Password</label>
+            <br/>
+            <input type="password" id="password" [(ngModel)]="usuario.password">
+            <br/>
+            <button type="submit" (click)="login()">Iniciar sesión</button>
+            <br>
+            <button type="submit" class="btnLoginWithGoogle" (click)="loginWithGoogle()">Ingresar con Google</button>
+            <p> <span> ¿Aun no tienes cuenta? <a routerLink="/auth/register">Registrate</a></span></p>
+        </div>
+        
+       
+    </ng-template>
+</div>

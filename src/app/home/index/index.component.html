@@ -5,15 +5,15 @@
 
             <div class="menuSorteos">
                 <div class="card" routerLink="sorteos/SorteoSimple">
-                    <img src="../../../assets/img/raffle.png">
+                    <img src="assets/img/raffle.png">
                    <h3>Sorteo simple</h3>
                    <div class="line"></div>
                    <p></p>
                   
                 </div>
 
-                <div class="card disabledCard">
-                    <img src="../../../assets/img/raffle1.png">
+                <div class="card" routerLink="sorteos/SorteoAvanzado">
+                    <img src="assets/img/raffle1.png">
                     <h3>Sorteo avanzado</h3>
                     <div class="line"></div>
                         <p>¡Incluye más opciones!</p>
@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="card disabledCard">
-                    <img src="../../../assets/img/roulette.png">
+                    <img src="assets/img/roulette.png">
                     <h3>Sorteo con ruleta</h3>
                     <div class="line"></div>
                         <p>¡Un ganador por tirada!</p>
@@ -29,35 +29,35 @@
                 </div>
 
                 <div class="card" routerLink="sorteos/NumerosAleatorios">
-                    <img src="../../../assets/img/numbers.png">
+                    <img src="assets/img/numbers.png">
                     <h3>Números aleatorios</h3>
                     <div class="line"></div>
                         <p></p>
                 </div>
 
                 <div class="card disabledCard">
-                    <img src="../../../assets/img/group.png">
+                    <img src="assets/img/group.png">
                     <h3>Generar grupos</h3>
                     <div class="line"></div>
                         <p></p>
                 </div>
 
                 <div class="card disabledCard">
-                    <img src="../../../assets/img/relaciones.png">
+                    <img src="assets/img/relaciones.png">
                     <h3>Asociar elementos</h3>
                     <div class="line"></div>
                         <p>Relaciona elementos de diferentes listas</p>
                 </div>
 
                 <div class="card disabledCard">
-                    <img src="../../../assets/img/coins.png">
+                    <img src="assets/img/coins.png">
                     <h3>Cara o cruz</h3>
                     <div class="line"></div>
                 </div>
 
                 
                 <div class="card cardFlecha disabledCard">
-                    <img class="iconFlecha" src="../../../assets/img/arrow.png">
+                    <img class="iconFlecha" src="assets/img/arrow.png">
                     <h3>Girar una flecha</h3>
                     <div class="line"></div>
                         <p></p>
@@ -65,7 +65,7 @@
 
                 
                 <div class="card disabledCard">
-                    <img src="../../../assets/img/dado.png">
+                    <img src="assets/img/dado.png">
                     <h3>Lanzar un dado</h3>
                     <div class="line"></div>
                         <p></p>
@@ -73,38 +73,38 @@
 
                 
                 <div class="card disabledCard">
-                    <img src="../../../assets/img/gift.png">
+                    <img src="assets/img/gift.png">
                     <h3>Amigo invisible</h3>
                     <div class="line"></div>
                         <p></p>
                 </div>
 
                 <div class="card disabledCard">
-                    <img src="../../../assets/img/post.png">
+                    <img src="assets/img/post.png">
                     <h3>Sorteo en publicaciones</h3>
                     <div class="line"></div>
                         <p>¡Realiza un sorteo en tus publicaciones de tus redes sociales!</p>
                 </div>
 
                 <div class="card disabledCard">
-                    <img src="../../../assets/img/torneo.png">
+                    <img src="assets/img/torneo.png">
                     <h3>Torneos</h3>
                     <div class="line"></div>
                         <p></p>
                 </div>
 
                 <div class="card disabledCard">
-                    <img src="../../../assets/img/exclusive.png">
+                    <img src="assets/img/exclusive.png">
                     <h3>Sorteo exclusivos de la aplicación</h3>
                     <div class="line"></div>
                         <p>¡Participa en sorteos creados para usuarios registrados en la aplicación!</p>
                 </div>
 
-                <div class="fullCard disabledCard">
+                <div class="fullCard" *ngIf="misResultados.length > 0" routerLink="sorteos/lista" >
                    
-                        <img src="../../../assets/img/historial.png">
+                        <img src="assets/img/historial.png">
                        
-                            <span> Historial de sorteos </span>
+                            <span > Historial de sorteos </span>
                        
                    
                     
@@ -122,7 +122,7 @@
             <div class="menuDecisiones">
 
                 <div class="card disabledCard">
-                    <img src="../../../assets/img/tv.png">
+                    <img src="assets/img/tv.png">
                     <h3>Series</h3>
                     <div class="line"></div>
                         <p>¿Qué serie veo hoy?</p>
@@ -130,7 +130,7 @@
                 </div>
 
                 <div class="card disabledCard">
-                    <img src="../../../assets/img/film.png">
+                    <img src="assets/img/film.png">
                     <h3>Peliculas</h3>
                     <div class="line"></div>
                         <p>¿Qué película veo hoy?</p>
@@ -138,7 +138,7 @@
                 </div>
 
                 <div class="card disabledCard">
-                    <img src="../../../assets/img/videogames.png">
+                    <img src="assets/img/videogames.png">
                     <h3>Videojuegos</h3>
                     <div class="line"></div>
                         <p>¿A que juego hoy?</p>
@@ -146,7 +146,7 @@
                 </div>
 
                 <div class="card" routerLink="decisiones/Musica">
-                    <img src="../../../assets/img/music.png">
+                    <img src="assets/img/music.png">
                     <h3>Música</h3>
                     <div class="line"></div>
                         <p>¿Qué escucho hoy?</p>
@@ -155,7 +155,7 @@
 
                 <div class="fullCard disabledCard">
        
-                    <img src="../../../assets/img/historial.png">
+                    <img src="assets/img/historial.png">
                    
                         <span> Historial de decisiones </span>
                    

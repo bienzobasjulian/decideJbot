@@ -106,7 +106,7 @@ export class NumeroAleatorioComponent implements OnInit {
         }
       }
 
-      alert(this.numeros);
+      
     }
   }
 

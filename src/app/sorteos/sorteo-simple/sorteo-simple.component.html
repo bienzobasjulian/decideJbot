@@ -4,18 +4,36 @@
     <div class="contenedorContenido">
         <div class="row">
             <div class="column columnaSorteos">
-                <div class="divIntroSorteo">
-                    <span class="titleSorteoSimple" > Sorteo Simple </span>
+                
+                <div class="divIntroSorteo" *ngIf="!editInfoSorteo">
+                    <span class="titleSorteoSimple" (dblclick)="showEditInfoSorteo()" > {{title}} </span>
+                    <button class="btnEditarTitle" (click)="showEditInfoSorteo()"><i class="fa fa-pencil"></i></button>
                     <br>
                     <span class="descripcionSorteoSimple"> Crea un sorteo índicando únicamente los participantes y el número de premios. </span>
+                 </div>
+
+                 <div class="editInfoSorteo" *ngIf="editInfoSorteo">
+                     <input type="text" class="titleSorteoSimple"  autocomplete="off"
+                     #inputTitleSorteo [(ngModel)]="title" (keyup.enter)="saveTitleSorteo()"> 
+                     <button (click)=" saveTitleSorteo()" class="btnSaveTitleSorteo"><i class="fa fa-floppy-o"></i></button>
+                     <br>
+                     <span class="descripcionSorteoSimple"> Establece un título/descripción a tu sorteo (Si lo guardas, te podrá ser más fácil identificarlo) </span> 
+                     
                  </div>
 
                  <div class="divSorteoSimple"> 
                 <fieldset class="fieldParticipantes" (click)="setFocusOnNewParticipante()">
                     <legend class="leyendaParticipantes"> Participantes </legend>
        <div class="content">
-   <p>Introduce un  participante y pulsa intro.</p>
-        
+   <p class="infoPulsaIntro">Introduce un  participante y pulsa intro.</p>
+   <div class="divInput">
+    <input #inputNewParticipante type="text" autocomplete="off" spellcheck="false"  
+placeholder="Añade participante" 
+id="inputParticipantes" [(ngModel)]="newParticipante"  (keyup.enter)="addParticipante()">
+
+<button class="btnAddParticipante" (click)="addParticipante()"><i class="fa fa-plus" aria-hidden="true"></i></button>
+
+</div>   
    <ul>
 
     <li *ngFor="let participante of participantes; let i = index" class="elementoParticipante"> 
@@ -24,62 +42,72 @@
         
     </li>
 
+   
     <input #inputNewParticipante type="text" autocomplete="false" spellcheck="false"  
-    placeholder="Añade participante" 
+    placeholder="Añade participante" autocomplete="off"
     id="inputParticipantes" [(ngModel)]="newParticipante"  (keyup.enter)="addParticipante()">
 </ul>
+
  </div>
        
       <div class="details">
    <p><span></span> {{participantes.length}} participantes disponibles</p>
-  <div class="botonesAccionLista" *ngIf="stateMainButtons" >
-                <div class="tooltipCopy" *ngIf="participantes.length > 0">  
-                    <button type=""  class="btnCopy" title="Copiar participantes"><span class="tooltipCopytext" id="myTooltipCopy">Copiar al portapapeles</span><i class="fas fa-copy"></i></button>
-                </div>
-                 <div class="tooltipImport"> 
-                     <button type="" (click)="getSorteosLocales()"  class="btnImport" title="Importar participantes"><span class="tooltipImporttext" id="myTooltipImport">Importar participantes</span><i class="fas fa-upload"></i></button>
-                  </div>
-                 <div class="tooltipExport" *ngIf="participantes.length > 0">
-                     <button type=""   class="btnExport" title="Guardar participantes" (click)="showSaveButtons()"><span class="tooltipExporttext" id="myTooltipExport">Guardar participantes</span><i class="fas fa-download"></i></button>
-                 </div>
-                 <div class="tooltipMezclar" *ngIf="participantes.length > 0">
-                    <button type=""   class="btnMezclar" title="Mezclar participantes" (click)="mezclarParticipantes()"><span class="tooltipMezclartext" id="myTooltipMezclar">Mezclar participantes</span><i class="fas fa-random"></i></button>
-                </div>
-                 <div class="tooltipDelete" *ngIf="participantes.length > 0">
-                     <button type=""  (click)="removeAllParticipantes()" class="btnDelete" title="Eliminar participantes"><span class="tooltipDeletetext" id="myTooltipDelete">Eliminar participantes</span><i class="fas fa-trash-alt"></i> </button>
-                 </div>
+  <div class="botonesAccionLista" >
 
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+        <i class="fa fa-ellipsis-v"></i>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item *ngIf="participantes.length > 0">
+            <i class="fas fa-copy"></i> Copiar al portapapeles
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="menuImportar">
+            <i class="fas fa-upload"></i> Importar participantes
+
+            <mat-menu #menuImportar="matMenu">
+                <button mat-menu-item (click)="getSorteosLocales()">
+                    <i class="fas fa-home"></i> Ver participantes locales
+                </button>
+                <button mat-menu-item (click)=" showAllSorteos()">
+                    <i class="fa fa-arrows-v"></i> Ver todos los participantes
+                </button>
+                <button mat-menu-item (click)="getSorteosExternos()">
+                    <i class="fas fa-database"></i> Ver participantes externos
+                </button>
+            </mat-menu>
+        </button>
+
+        <button mat-menu-item [matMenuTriggerFor]="menuExportar" *ngIf="participantes.length > 0">
+            <i class="fas fa-download"></i> Exportar participantes
+
+            <mat-menu #menuExportar="matMenu">
+                <button mat-menu-item (click)="saveSorteoLocalmente()">
+                    <i class="fas fa-home"></i> Guardar localmente
+                </button>
+                <button mat-menu-item>
+                    <i class="fa fa-arrows-v"></i> Almacenamiento mixto
+                </button>
+                <button mat-menu-item (click)="saveSorteoExternamente()">
+                    <i class="fas fa-database" ></i> Almacenamiento externo
+                </button>
+            </mat-menu>
+        </button>
+
+        <button mat-menu-item *ngIf="participantes.length > 1" (click)="mezclarParticipantes()">
+            <i class="fas fa-random"></i> Mezclar participantes
+        </button>
+
+        <button mat-menu-item *ngIf="participantes.length > 0" (click)="removeAllParticipantes()">
+            <i class="fas fa-trash-alt"></i> Borrar participantes
+        </button>
+        
+
+
+      </mat-menu>
                 
              </div>
 
-             <div class="saveButtons" *ngIf="stateSaveButtons">
-                
-                <div class="tooltipInfoSave">  
-                    <button type="" (click)="showSaveInfoModal()"  class="btnInfoSave" title="Info"><span class="tooltiptext" id="myTooltipInfoSave">Info</span><i class="fa fa-info-circle"></i></button>
-                </div>
-
-                <div class="tooltipDownload">  
-                    <button type=""  class="btnDownload" title="Descargar..."><span class="tooltiptext" id="myTooltipDownload">Descargar...</span><i class="fa fa-floppy-o"></i></button>
-                </div>
-
-                <div class="tooltipSaveLocal">  
-                    <button type=""  class="btnSaveLocal" (click)="saveSorteoLocalmente()" title="Guardar localmente"><span class="tooltiptext" id="myTooltipSaveLocal">Guardar localmente</span><i class="fas fa-home"></i></button>
-                </div>
-
-                <div class="tooltipSaveMixto">  
-                    <button type=""  class="btnSaveMixto" title="Almacenamiento mixto"><span class="tooltiptext" id="myTooltipSaveMixto">Almacenamiento mixto</span><i class="fa fa-arrows-h"></i></button>
-                </div>
-
-                <div class="tooltipSaveEx">  
-                    <button type=""  class="btnSaveEx" title="Guardar externamente"><span class="tooltiptext" id="myTooltipSaveEx">Guardar externamente</span><i class="fas fa-database"></i></button>
-                </div>
-
-                <div class="tooltipCancel">  
-                    <button type=""  class="btnCancel" (click)="showMainButtons()" title="Cancelar"><span class="tooltiptext" id="myTooltipCancel">Cancelar</span><i class="fas fa-times"></i></button>
-                </div>
-
-
-             </div>
+             
  </div>
  
        </fieldset>
@@ -87,10 +115,11 @@
              <br>
         </div>
         
-        <div class="tableListaSorteos" *ngIf="mostrarTablaSorteosLocales">
+        <div class="tableListaSorteos" *ngIf="mostrarTablaSorteosLocales && sorteosLocales.length > 0">
             <table>
                <tr class="tituloTabla">
-                   <th colspan="3">Sorteos almacenados localmente</th>
+                   <th colspan="2">Sorteos almacenados localmente</th>
+                   <th><button class="btnDeleteAll" (click)=" showDeleteAllLocalesModal()"><i class="fa fa-trash"></i> Borrar todos</button></th>
                    <th class="closeTabla" (click)="mostrarTablaSorteosLocales = false">X</th>
                </tr>
                 <tr>
@@ -100,10 +129,40 @@
                    
                 </tr>
 
-                <tr *ngFor="let sorteo of sorteosLocales">
-                    <td>Sorteo simple</td>
+                <tr *ngFor="let sorteo of sorteosLocales; let i = index">
+                    <td>{{sorteo.titulo}}</td>
                     <td>{{sorteo.participantes}}</td>
-                    <td></td>
+                    <td>
+                        <button class="btnAddParticipantes" (click)="addParticipantes(sorteo.participantes)"><i class="fa fa-plus-circle"></i> Añadir</button>
+                        <button class="btnReemplazarParticipantes" (click)="showReplaceModal(sorteo.participantes)"><i class="fa fa-refresh"></i> Reemplazar</button>
+                        <button class="btnEliminarParticipantes" (click)="showDeleteSorteoLocalModal(i)"><i class="fa fa-trash-o"></i> Eliminar</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="tableListaSorteos" *ngIf="mostrarTablaSorteosExternos && sorteosExternos.length > 0">
+            <table>
+               <tr class="tituloTabla">
+                   <th colspan="2">Sorteos almacenados externamente</th>
+                   <th><button class="btnDeleteAll"><i class="fa fa-trash"></i> Borrar todos</button></th>
+                   <th class="closeTabla" (click)="mostrarTablaSorteosExternos = false">X</th>
+               </tr>
+                <tr>
+                    <th>Titulo</th>
+                    <th>Participantes</th>
+                    <th>Acciones</th>
+                   
+                </tr>
+
+                <tr *ngFor="let sorteo of sorteosExternos; let i = index">
+                    <td>{{sorteo.titulo}}</td>
+                    <td>{{sorteo.participantes}}</td>
+                    <td>
+                        <button class="btnAddParticipantes" (click)="addParticipantes(sorteo.participantes)"><i class="fa fa-plus-circle"></i> Añadir</button>
+                        <button class="btnReemplazarParticipantes" (click)="showReplaceModal(sorteo.participantes)"><i class="fa fa-refresh"></i> Reemplazar</button>
+                        <button class="btnEliminarParticipantes"><i class="fa fa-trash-o"></i> Eliminar</button>
+                    </td>
                 </tr>
             </table>
         </div>
@@ -117,12 +176,23 @@
                                         <input type="number" class="form-control" min="1" [(ngModel)]="numPremios" id="input_numPremios" name="input_numPremios" #inputNumPremios>
                                
                                 </fieldset>
+
                                 <br>
+
+                                <mat-checkbox class="tp-margin" [(ngModel)]="activarCuentaAtras">Activar cuenta atrás <small>(5s)</small></mat-checkbox>
+
+                               
+
+                                
+
+                                <p>
                                     <button type="submit" name="sorteo" class="btnSortear" (click)="sortear()">
                                             Sortear 
                                             <div></div>
                                             <i class="fas fa-random"></i>
                                     </button>
+
+                                    
 
          </div>
         
@@ -174,16 +244,16 @@
                 </div>
                 
                 <span class="titleResultados" *ngIf="hayResultados">Resultados del sorteo</span>
-                <div class="containerGanadores" *ngIf="hayResultados">
+                <div class="containerGanadores" id="containerGanadores" *ngIf="hayResultados">
                     <div class="titleGanadores">Ganadores:</div>
                     <div class="divListaGanadores">
                         <ol class="listaGanadores">
-                            <li *ngFor="let ganador of ganadores">{{ganador}}</li>
+                            <li *ngFor="let ganador of resultado.ganadores">{{ganador}}</li>
                         </ol>
                     </div>
 
                     <div class="infoResultados">
-                        <div class="fecha"><span>{{fechaSorteo | date:'dd/MM/yyyy HH:mm:ss'}}</span></div>
+                        <div class="fecha"><span>{{resultado.fecha | date:'dd/MM/yyyy HH:mm:ss'}}</span></div>
                        <div class="resultados_titleApp">
                           <span>DecideJbot</span>
                        </div>
@@ -196,7 +266,9 @@
                     </div>
                 
                     <button type="submit" name="sorteo" class="btnRepetir" *ngIf="hayResultados" (click)="sortear()">Repetir sorteo <div></div><i class="fas fa-random"></i></button>
-            </div>
+                    <button type="submit"  class="btnGuardarImagen"  *ngIf="hayResultados" (click)="saveResultadosImg()">Guardar como imágen <div></div><i class="fa fa-file-image-o"></i></button>
+
+                </div>
         </div>
 
         

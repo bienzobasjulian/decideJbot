@@ -1,0 +1,383 @@
+
+  body {
+    background-color: #fbfdeb;
+  }
+
+  .fullContainer {
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    padding: 0;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    justify-content: space-between;
+    -webkit-flex: 1 1;
+    -moz-box-flex: 1;
+    flex: 1 1;
+   
+  }
+  
+  .contenedorContenido {
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    flex-direction: column;
+    -webkit-flex-grow: 1;
+    -moz-box-flex: 1;
+    flex-grow: 1;
+    padding-top: 2.25rem;
+    background-color: #fbfdeb;
+    height: 100%;
+  }
+  
+  .column {
+    float: left;
+    padding: 10px;
+  }
+  
+  .row {
+    background-color: #fbfdeb;
+    height: 100%;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .columnaSorteos {
+    width: 100%;
+  }
+
+  .columnaOtrosSorteos {
+    display: none;
+    width: 25%;
+    padding-right: 1.125rem;
+    padding-left: 1.125rem;
+  }
+
+  .divIntroSorteo{
+    margin: auto;
+    text-align: center;
+  }
+
+  .divIntroSorteo ul {
+    list-style: none;
+  }
+
+  .btnComenzarSorteoAvanzado{
+    background-color: #4caf50;
+    color: white;
+    
+  }
+
+  .divSorteoSimple {
+    width: 100%;
+    margin: auto;
+    align-items: end;
+    display: flex;
+  }
+
+
+ 
+ .descripcionSorteo a {
+  text-decoration: none;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.titlePresentacion, .titlePaso {
+  margin: 0;
+  font-family: "Fredoka One", -apple-system, BlinkMacSystemFont, "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica", "Arial",
+    sans-serif;
+  font-weight: 900;
+  font-size: 2.125rem;
+  color: #4caf50;
+  text-align: center;
+}
+
+.descripcion {
+  margin: 0px;
+  font-family: Montserrat, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans",
+    Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  color: rgba(0, 0, 0);
+  text-align: center;
+}
+
+.paso1 .mat-form-field{
+  width: 50%;
+}
+
+.btnGoPasoParticipantes, .btnNext{
+  margin: 0;
+  font-family: "Fredoka One", -apple-system, BlinkMacSystemFont, "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica", "Arial",
+    sans-serif;
+  font-weight: 900;
+  font-size: 2.125rem;
+  background-color: #4caf50;
+  text-align: center;
+  color: white;
+  padding: 12px;
+}
+
+.btnBack {
+  margin: 0;
+  font-family: "Fredoka One", -apple-system, BlinkMacSystemFont, "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica", "Arial",
+    sans-serif;
+  font-weight: 900;
+  font-size: 2.125rem;
+  background-color: red;
+  text-align: center;
+  color: white;
+  padding: 12px;
+  margin-right: 12px;
+}
+
+.divSorteoSimple {
+  width: 100%;
+  margin: auto;
+  align-items: end;
+  display: flex;
+}
+
+.fieldParticipantes {
+  border-radius: 0.25rem;
+  border: 0.0625rem solid rgba(0, 0, 0, 0.3);
+  background-color: rgb(255, 255, 255, 0.75);
+  /* position: relative; */
+  float: left;
+  width: 75%;
+  margin: auto;
+}
+
+.leyendaParticipantes {
+  padding: 0 0.375rem;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.75rem;
+}
+
+.ListaDeParticipantes {
+  padding: 0.75rem;
+  overflow: hidden;
+}
+
+.insertarParticipante {
+  margin-bottom: 10px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#elementoParticipante {
+  margin-top: 10px;
+  margin: 5px;
+  padding: 10px;
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  background-color: rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+}
+
+.borrarParticipante {
+  color: red;
+}
+
+.inputEditarParticipante {
+  margin-top: 10px;
+  margin: 5px;
+  padding: 10px;
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  background-color: rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  border: 0px;
+}
+
+.input-width {
+  position: absolute;
+  padding: 10px;
+  visibility: hidden;
+}
+
+.content {
+  margin: 10px 0;
+}
+
+.content p {
+  font-size: 15px;
+}
+
+.content ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 7px;
+  margin: 12px 0;
+  border-radius: 5px;
+  border: 1px solid #a6a6a6;
+}
+
+.content ul input {
+  flex: 1;
+  padding: 5px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  display: none;
+}
+
+.infoPulsaIntro {
+  display: none;
+}
+
+.divInput input {
+  flex: 1;
+  padding: 10px;
+  outline: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: 1px solid black;
+}
+
+.content ul li {
+  color: #333;
+  margin: 4px 3px;
+  list-style: none;
+  border-radius: 5px;
+  background: #f2f2f2;
+  padding: 5px 8px 5px 10px;
+  border: 1px solid #e3e1e1;
+}
+.content ul li i {
+  height: 20px;
+  width: 20px;
+  color: red;
+  margin-left: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  background: #dfdfdf;
+  justify-content: center;
+}
+
+.fieldParticipantes .details {
+  justify-content: space-between;
+}
+
+.fieldParticipantes :where(.title, li, li i, .details) {
+  display: flex;
+  align-items: center;
+}
+
+.form-control {
+  
+  font-weight: 700;
+  text-align: center;
+  max-width: 75%;
+  margin-top: 8px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding: 0;
+  font-size: 24px;
+  height: 40px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  border-color: #d2d6dc;
+  border-width: 1px;
+  border-radius: 10px;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  border-color: #e9e9e9;
+  box-shadow: none;
+  color: #4caf50;
+}
+
+.divInput {
+  position: relative;
+ 
+}
+
+
+.divInput button {
+  border-top-right-radius:10px;
+  border-bottom-right-radius:10px;
+  padding:10px;
+  border:1px solid black;
+
+}
+  
+
+.btnAddParticipante{
+  background-color: #4caf50;
+ 
+}
+
+.paso4 ::ng-deep p-calendar {
+  background-color: white;
+}
+
+.generarYa {
+  color: #4caf50;
+}
+
+.btnCopyUrl{
+  margin: 0;
+  font-family: "Fredoka One", -apple-system, BlinkMacSystemFont, "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica", "Arial",
+    sans-serif;
+  font-weight: 900;
+  font-size: 2.125rem;
+  background-color: #4caf50;
+  text-align: center;
+  color: white;
+}
+
+
+
+
+
+
+
+
+/* PC */
+@media(min-width: 1024px){
+  .columnaSorteos {
+    width: 75%;
+  }
+
+  .columnaOtrosSorteos {
+    display: block;
+  }
+
+  .infoPulsaIntro {
+    display: block;
+  }
+
+  .content ul input {
+    display: block;
+  }
+
+  .divInput {
+    display: none;
+  }
+
+  .containerGanadores {
+    
+    width: 25%;
+    
+  }
+
+}
